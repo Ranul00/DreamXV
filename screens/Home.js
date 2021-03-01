@@ -1,19 +1,8 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { globalStyles } from "../styles/global";
-import { SearchBar } from "react-native-elements";
 
 export default function Home({ navigation }) {
-  state = {
-    search: "",
-  };
-
-  updateSearch = (search) => {
-    this.setState({ search });
-  };
-
-  const { search } = this.state;
-
   const goToPositions = () => {
     navigation.navigate("Positions");
   };
@@ -30,13 +19,6 @@ export default function Home({ navigation }) {
     <View style={styles.container}>
       <Text style={styles.text}>Hello,</Text>
       <Text style={styles.name}>Jhon Wick.</Text>
-
-      <SearchBar
-        style={styles.searchbar}
-        placeholder="search"
-        onChange={this.updateSearch}
-        value={search}
-      />
 
       <TouchableOpacity
         titile="go to positionss"
@@ -83,9 +65,6 @@ const styles = StyleSheet.create({
     fontFamily: "FiraSans regular",
     paddingLeft: 5,
     color: "white",
-  },
-  searchbar: {
-    top: 240,
   },
 
   btn1: {
