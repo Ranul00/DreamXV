@@ -5,6 +5,7 @@ import Home from "../screens/Home";
 import BestXV from "../screens/bestXV";
 import Compare from "../screens/compare";
 import Positions from "../screens/positions";
+import PlayerStats from "../screens/PlayerStats";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -15,6 +16,7 @@ const HomeNavigator = () => (
     <Screen name="Positions" component={Positions} />
     <Screen name="Compare" component={Compare} />
     <Screen name="BestXV" component={BestXV} />
+    <Screen name="PlayerStats" component={PlayerStats}/>
   </Navigator>
 );
 
