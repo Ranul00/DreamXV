@@ -9,9 +9,6 @@ export default function Compare({ navigation }) {
   return (
     <View style={styles.container}>
       <Text>compare</Text>
-      <Text>compare</Text>
-      <Text>compare</Text>
-      <Text>compare</Text>
       <Button title="go to home" onPress={pressHandler} />
     </View>
   );
