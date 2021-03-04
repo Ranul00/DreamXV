@@ -24,12 +24,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#2C2C44",
     flex: 1,
   },
+  bckBtnContainer: {},
+
   topic: {
     fontFamily: "FiraSans regular",
     fontSize: 23,
-    top: 150,
+    top: 110,
     left: 8,
     color: "white",
+    fontWeight: "bold",
   },
   bckBtnText: {
     fontSize: 18,
@@ -52,5 +55,6 @@ const styles = StyleSheet.create({
   topicText: {
     alignSelf: "center",
     color: "white",
+    fontWeight: "bold",
   },
 });
