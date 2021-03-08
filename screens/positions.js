@@ -25,7 +25,7 @@ export default function ReviewDetails({ navigation }) {
       <Text style={styles.topic}>Select your position</Text>
 
       <ScrollView style={styles.contentBox}>
-        <Text style={styles.subTopic}>Scrum Players</Text>
+        {/* <Text style={styles.subTopic}>Scrum Players</Text> */}
         <TouchableOpacity style={styles.pButton} onPress={pressHandler}>
           <Text style={styles.contentText}>1. Hooker</Text>
         </TouchableOpacity>
@@ -44,7 +44,7 @@ export default function ReviewDetails({ navigation }) {
         <TouchableOpacity style={styles.pButton} onPress={pressHandler}>
           <Text style={styles.contentText}>6.Number 8</Text>
         </TouchableOpacity>
-        <Text style={styles.subTopic}>Back Players</Text>
+        {/* <Text style={styles.subTopic}>Back Players</Text> */}
         <TouchableOpacity style={styles.pButton} onPress={pressHandler}>
           <Text style={styles.contentText}>7.Scrum half</Text>
         </TouchableOpacity>

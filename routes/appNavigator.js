@@ -6,17 +6,21 @@ import BestXV from "../screens/bestXV";
 import Compare from "../screens/compare";
 import Positions from "../screens/positions";
 import PlayerStats from "../screens/PlayerStats";
+import Start from "../screens/start";
+import Signup from "../screens/Signup";
 
 const { Navigator, Screen } = createStackNavigator();
 
 const HomeNavigator = () => (
   <Navigator headerMode="none">
     {/* //other options: "float", "screen" */}
+    <Screen name="Start" component={Start} />
     <Screen name="Home" component={Home} />
     <Screen name="Positions" component={Positions} />
     <Screen name="Compare" component={Compare} />
     <Screen name="BestXV" component={BestXV} />
-    <Screen name="PlayerStats" component={PlayerStats}/>
+    <Screen name="PlayerStats" component={PlayerStats} />
+    <Screen name="Signup" component={Signup} />
   </Navigator>
 );
 
