@@ -1,5 +1,5 @@
 import React , { useState } from "react";
-import { StyleSheet, View, Text, Button,FlatList,TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, StatusBar,FlatList,TouchableOpacity } from "react-native";
 
 
 export default function Compare({ navigation }) {
@@ -16,9 +16,9 @@ export default function Compare({ navigation }) {
   return (
     <View style={styles.container}>
 
-      <View style = {styles.buttonContainer}>
-        <Button title="go to home" onPress={pressHandler} />
-      </View>
+      <TouchableOpacity style={styles.buttonContainer} onPress={pressHandler}>
+        <Text style = {styles.button}>Home</Text>
+      </TouchableOpacity>
 
       <View style = {styles.textContainer}>
         <Text style = {styles.text}>Compare</Text>
@@ -61,7 +61,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   buttonContainer: {
-    paddingTop:30
+    paddingTop:Platform.OS === "android" ? StatusBar.currentHeight:0,
+    width:100,
+  },
+  button: {
+    color:'white',
+    fontWeight:'bold',
+    fontSize:18,
+    left:6
   },
   textContainer: {
     paddingTop:40

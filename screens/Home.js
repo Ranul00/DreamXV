@@ -2,7 +2,9 @@ import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { globalStyles } from "../styles/global";
 
-export default function Home({ navigation }) {
+export default function Home({route, navigation }) {
+  const {text} = route.params;
+
   const goToPositions = () => {
     navigation.navigate("Positions");
   };
@@ -15,10 +17,11 @@ export default function Home({ navigation }) {
     navigation.navigate("Compare");
   };
 
-  return (
+  if (text === "") {
+    return (
     <View style={styles.container}>
       <Text style={styles.text}>Hello,</Text>
-      <Text style={styles.name}>Jhon Wick.</Text>
+      <Text style={styles.name}>Guest</Text>
 
       <TouchableOpacity
         titile="go to positionss"
@@ -44,7 +47,41 @@ export default function Home({ navigation }) {
         <Text style={globalStyles.btnText}>Compare</Text>
       </TouchableOpacity>
     </View>
-  );
+  )
+  }else{
+    return (
+      <View style={styles.container}>
+        <Text style={styles.text}>Hello,</Text>
+        <Text style={styles.name}>{text}.</Text>
+  
+        <TouchableOpacity
+          titile="go to positionss"
+          style={styles.btn1}
+          onPress={goToPositions}
+        >
+          <Text style={globalStyles.btnText}>Positions</Text>
+        </TouchableOpacity>
+  
+        <TouchableOpacity
+          titile="go to bestxv"
+          style={styles.btn2}
+          onPress={goTobestXV}
+        >
+          <Text style={globalStyles.btnText}>Best XV</Text>
+        </TouchableOpacity>
+  
+        <TouchableOpacity
+          titile="go to compare"
+          style={styles.btn3}
+          onPress={goToCompare}
+        >
+          <Text style={globalStyles.btnText}>Compare</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
+
+  
 }
 
 const styles = StyleSheet.create({

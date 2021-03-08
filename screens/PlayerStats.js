@@ -1,19 +1,22 @@
 import React from 'react'
-import { StyleSheet, Text, View ,Button,StatusBar} from 'react-native'
+import { StyleSheet, Text, View ,TouchableOpacity,StatusBar} from 'react-native'
 
-export default function PlayerStats({navigation}) {
+export default function PlayerStats({route, navigation}) {
+
+     const {text} = route.params;
+
      const backToBestXV = () => {
           navigation.goBack("PlayerStats");
      };
 
      return (
           <View style = {styles.container}>
-               <View style = {styles.buttonContainer}>
-                    <Button title="back to BestXV" onPress = {backToBestXV} />
-               </View>
+               <TouchableOpacity style={styles.buttonContainer} onPress={backToBestXV}>
+                    <Text style = {styles.button}>Back</Text>
+               </TouchableOpacity>
                
                <View style = {styles.playerNumber}>
-                    <Text style = {styles.text}>placeholder text one</Text>
+                    <Text style = {styles.text}>{text}</Text>
                </View>
                <View style = {styles.playerDetails}>
                     <Text style = {styles.text}>placeholder text two</Text>
@@ -35,7 +38,7 @@ const styles = StyleSheet.create({
           
      },
      playerDetails: {
-          flex: 1.5,
+          flex: 3,
           justifyContent: 'center',
           alignItems: 'center',
           backgroundColor:'#72A0C1',
@@ -45,11 +48,18 @@ const styles = StyleSheet.create({
      },
      text: {
           fontFamily: "FiraSans regular",
-          fontSize: 23,
+          fontSize: 28,
           color: '#fff'
      },
      buttonContainer: {
-          paddingTop:30
+          paddingTop:Platform.OS === "android" ? StatusBar.currentHeight:0,
+          width:100,
+     },
+     button: {
+          color:'white',
+          fontWeight:'bold',
+          fontSize:18,
+          left:6
      },
 
 })

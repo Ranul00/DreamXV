@@ -1,14 +1,14 @@
 import React , { useState }from 'react'
+import { StatusBar } from 'react-native';
+import { Platform } from 'react-native';
 import { StyleSheet, Text, View,FlatList, TouchableOpacity, Button } from 'react-native'
+
 
 export default function BestXV({navigation}) {
      const pressHandler = () => {
           navigation.goBack();
      };
 
-     const goToPlayerStats = () => {
-          navigation.navigate("PlayerStats");
-     };
 
      const[player, setPlayer] = useState([
           {text: 'Player One' , key : '1'},
@@ -29,11 +29,13 @@ export default function BestXV({navigation}) {
      ])
      return (
           <View style = {styles.container}>
-               <View style = {styles.buttonContainer}>
-                     <Button title="Back to home" onPress = {pressHandler} />
-               </View>
-               <View>
+               <TouchableOpacity style={styles.buttonContainer} onPress={pressHandler}>
+                     <Text style = {styles.button}>Home</Text>
+               </TouchableOpacity>
+               <View style = {styles.textOneContainer}>
                     <Text style = {styles.textOne}>Best XV</Text>
+                </View>
+                <View style = {styles.textTwoContainer}>
                     <Text style = {styles.textTwo}>DreamXV  First  Fifteen </Text>
                </View>
 
@@ -42,7 +44,7 @@ export default function BestXV({navigation}) {
                          data = {player}
                          renderItem = {({item}) => {
                               return(
-                                   <TouchableOpacity style = {styles.itemContainer} onPress = {goToPlayerStats}>
+                                   <TouchableOpacity style = {styles.itemContainer} onPress = {() => navigation.navigate("PlayerStats", item)}>
                                          <Text style = {styles.item}>{item.text}</Text>
                                    </TouchableOpacity>
 
@@ -60,15 +62,34 @@ const styles = StyleSheet.create({
           backgroundColor: "#2C2C44",
      },
      buttonContainer: {
-          paddingTop:30
+          paddingTop:Platform.OS === "android" ? StatusBar.currentHeight:0,
+          width:100,
+          
+     },
+     button: {
+          color:'white',
+          fontWeight:'bold',
+          fontSize:18,
+          left:6
+     },
+     textOneContainer: {
+          backgroundColor: "#1A1E49",
+          borderRadius: 10,
+          width: 100,
+          height: 30,
+          alignItems:'center',
+          marginTop:25,
+          marginLeft:8
      },
      textOne: {
           fontFamily: "FiraSans regular",
           fontSize: 18,
           color: '#fff',
-          left:10,
-          paddingBottom:10,
-          paddingTop:10
+          
+          //left:10,   
+     },
+     textTwoContainer: {
+          marginTop:20
      },
      textTwo: {
           fontFamily: "FiraSans regular",
@@ -88,5 +109,7 @@ const styles = StyleSheet.create({
      },
      listContainer: {
           flex:1,
+          marginTop:10
+
      }
 })
