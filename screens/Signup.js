@@ -1,4 +1,4 @@
-import React , { useState } from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -6,7 +6,7 @@ import {
   TextInput,
   TouchableOpacity,
   TouchableWithoutFeedback,
-  Keyboard
+  Keyboard,
 } from "react-native";
 
 export default function Signup({ navigation }) {
@@ -14,24 +14,37 @@ export default function Signup({ navigation }) {
   //   navigation.navigate("Home");
   // };
 
-  const[name,setName] = useState({text:'Guest'}); 
+  const [name, setName] = useState({ text: "Guest" });
 
   //const names = {text:setName(value)}
 
   return (
-    <TouchableWithoutFeedback onPress ={() =>Keyboard.dismiss()}>
-    <View style={styles.form}>
-      <Text style={styles.header}>Get Started</Text>
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+      <View style={styles.form}>
+        <Text style={styles.header}>Get Started</Text>
 
-      <TextInput style={styles.textinput} placeholder="Your name" placeholderTextColor="#fff" onChangeText = {(value) => {setName({text:value})}}/>
-      <TextInput style={styles.textinput} placeholder="Email" placeholderTextColor="#fff" />
-      <TouchableOpacity
-        style={styles.btn1}
-        onPress={() => {navigation.navigate("Home",name)}}
-      >
-        <Text style={styles.btnText}>Confirm</Text>
-      </TouchableOpacity>
-    </View>
+        <TextInput
+          style={styles.textinput}
+          placeholder="Your name"
+          placeholderTextColor="#fff"
+          onChangeText={(value) => {
+            setName({ text: value });
+          }}
+        />
+        <TextInput
+          style={styles.textinput}
+          placeholder="Email"
+          placeholderTextColor="#fff"
+        />
+        <TouchableOpacity
+          style={styles.btn1}
+          onPress={() => {
+            navigation.navigate("Home", name);
+          }}
+        >
+          <Text style={styles.btnText}>Confirm</Text>
+        </TouchableOpacity>
+      </View>
     </TouchableWithoutFeedback>
   );
 }
@@ -40,8 +53,7 @@ const styles = StyleSheet.create({
   form: {
     backgroundColor: "#2C2C44",
     flex: 1,
-    alignItems:'center'
-    
+    alignItems: "center",
   },
   btn1: {
     elevation: 8,
@@ -82,6 +94,5 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     borderBottomColor: "#f8f8f8",
     borderBottomWidth: 1,
-    
   },
 });
