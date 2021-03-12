@@ -19,7 +19,7 @@ export default function ReviewDetails({ navigation }) {
       <TouchableOpacity style={globalStyles.bckButton} onPress={pressHandler}>
         <Text style={globalStyles.bckBtnText}>Back</Text>
       </TouchableOpacity>
-      <Text style={styles.topic}>Hookers</Text>
+      <Text style={styles.topic}>Fly Half</Text>
 
       <ScrollView style={styles.contentBox}>
         {/* <Text style={styles.subTopic}>Scrum Players</Text> */}

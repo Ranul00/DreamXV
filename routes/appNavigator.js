@@ -8,6 +8,16 @@ import Positions from "../screens/positions";
 import PlayerStats from "../screens/PlayerStats";
 import Start from "../screens/start";
 import Signup from "../screens/Signup";
+import Hooker from "../screens/hooker";
+import Prop from "../screens/Prop";
+import Lock from "../screens/lock";
+import Blind from "../screens/Blind-side";
+import Open from "../screens/open-side";
+import Number8 from "../screens/Number8";
+import Scrum from "../screens/scrumHlaf";
+import FlyHalf from "../screens/flyHalf";
+import Center from "../screens/center";
+import FullBack from "../screens/fullBack";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -21,6 +31,16 @@ const HomeNavigator = () => (
     <Screen name="BestXV" component={BestXV} />
     <Screen name="PlayerStats" component={PlayerStats} />
     <Screen name="Signup" component={Signup} />
+    <Screen name="Hooker" component={Hooker} />
+    <Screen name="Prop" component={Prop} />
+    <Screen name="Lock" component={Lock} />
+    <Screen name="Blind" component={Blind} />
+    <Screen name="Open" component={Open} />
+    <Screen name="Number8" component={Number8} />
+    <Screen name="Scrum" component={Scrum} />
+    <Screen name="FlyHalf" component={FlyHalf} />
+    <Screen name="Center" component={Center} />
+    <Screen name="FullBack" component={FullBack} />
   </Navigator>
 );
 

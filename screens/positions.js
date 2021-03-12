@@ -14,6 +14,37 @@ export default function ReviewDetails({ navigation }) {
     navigation.goBack();
   };
 
+  const goToHooker = () => {
+    navigation.navigate("Hooker");
+  };
+  const goToProp = () => {
+    navigation.navigate("Prop");
+  };
+  const goToLock = () => {
+    navigation.navigate("Lock");
+  };
+  const goToBlind = () => {
+    navigation.navigate("Blind");
+  };
+  const goToOpen = () => {
+    navigation.navigate("Open");
+  };
+  const goTonumber8 = () => {
+    navigation.navigate("Number8");
+  };
+  const goToScruhHalf = () => {
+    navigation.navigate("Scrum");
+  };
+  const goToFly = () => {
+    navigation.navigate("FlyHalf");
+  };
+  const goToCenter = () => {
+    navigation.navigate("Center");
+  };
+  const goToFullBack = () => {
+    navigation.navigate("FullBack");
+  };
+
   return (
     <View style={styles.container}>
       <TouchableOpacity style={globalStyles.bckButton} onPress={pressHandler}>
@@ -26,35 +57,35 @@ export default function ReviewDetails({ navigation }) {
 
       <ScrollView style={styles.contentBox}>
         {/* <Text style={styles.subTopic}>Scrum Players</Text> */}
-        <TouchableOpacity style={styles.pButton} onPress={pressHandler}>
+        <TouchableOpacity style={styles.pButton} onPress={goToHooker}>
           <Text style={styles.contentText}>1. Hooker</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.pButton} onPress={pressHandler}>
+        <TouchableOpacity style={styles.pButton} onPress={goToProp}>
           <Text style={styles.contentText}>2. Prop</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.pButton} onPress={pressHandler}>
+        <TouchableOpacity style={styles.pButton} onPress={goToLock}>
           <Text style={styles.contentText}>3. Lock</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.pButton} onPress={pressHandler}>
+        <TouchableOpacity style={styles.pButton} onPress={goToBlind}>
           <Text style={styles.contentText}>4.Blind-side-flanker</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.pButton} onPress={pressHandler}>
+        <TouchableOpacity style={styles.pButton} onPress={goToOpen}>
           <Text style={styles.contentText}>5.Open-side-flanker</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.pButton} onPress={pressHandler}>
+        <TouchableOpacity style={styles.pButton} onPress={goTonumber8}>
           <Text style={styles.contentText}>6.Number 8</Text>
         </TouchableOpacity>
         {/* <Text style={styles.subTopic}>Back Players</Text> */}
-        <TouchableOpacity style={styles.pButton} onPress={pressHandler}>
+        <TouchableOpacity style={styles.pButton} onPress={goToScruhHalf}>
           <Text style={styles.contentText}>7.Scrum half</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.pButton} onPress={pressHandler}>
+        <TouchableOpacity style={styles.pButton} onPress={goToFly}>
           <Text style={styles.contentText}>8.Fly half</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.pButton} onPress={pressHandler}>
+        <TouchableOpacity style={styles.pButton} onPress={goToCenter}>
           <Text style={styles.contentText}>8.Center</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.pButton} onPress={pressHandler}>
+        <TouchableOpacity style={styles.pButton} onPress={goToFullBack}>
           <Text style={styles.contentText}>9.Full back</Text>
         </TouchableOpacity>
       </ScrollView>
