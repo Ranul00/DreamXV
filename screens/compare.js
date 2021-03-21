@@ -7,6 +7,10 @@ export default function Compare({ navigation }) {
     navigation.goBack();
   };
 
+  const goToSearch = () => {
+    navigation.navigate("Search");
+  };
+
   const [player, setplayer] = useState([
     {text: 'Select Player', key: '1'},
     {text: 'Select Player', key: '2'},
@@ -31,7 +35,8 @@ export default function Compare({ navigation }) {
           renderItem = {({item}) =>{
             return(
                <View style = {styles.listContainer}>
-                 <TouchableOpacity style = {styles.itemContainer}>
+                 <TouchableOpacity style = {styles.itemContainer} onPress = {goToSearch}
+                  >
                    <Text style = {styles.item}>{item.text}</Text>
                  </TouchableOpacity>
                  

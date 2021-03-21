@@ -18,6 +18,7 @@ import Scrum from "../screens/scrumHlaf";
 import FlyHalf from "../screens/flyHalf";
 import Center from "../screens/center";
 import FullBack from "../screens/fullBack";
+import Search from "../screens/Search";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -41,6 +42,7 @@ const HomeNavigator = () => (
     <Screen name="FlyHalf" component={FlyHalf} />
     <Screen name="Center" component={Center} />
     <Screen name="FullBack" component={FullBack} />
+    <Screen name="Search" component={Search}/>
   </Navigator>
 );
 
