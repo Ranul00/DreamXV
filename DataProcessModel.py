@@ -42,3 +42,29 @@ def positionSort(worksheet, positionNo):
     return listOutput(ws_pp)
 
 # print(positionSort(ws,1))
+
+# recommending best team function
+def bestTeam():
+    bestPlayerList = []
+
+    for x in range(1, 16):
+        bestPlayerList.append(positionSort(ws, x)[0])
+
+    return bestPlayerList
+
+# print(bestTeam())
+
+# search player function
+def searchPlayer(worksheet, name):
+    searchPlayerList = []
+
+    if (name != " "):
+        for x in listOutput(worksheet):
+            if (name.upper() in x["name"].upper()):
+                searchPlayerList.append(x)
+            elif (name.upper() in x["name"].upper().replace(" ", "")):
+                searchPlayerList.append(x)
+
+    return searchPlayerList
+
+# print(searchPlayer(ws, "jam"))
