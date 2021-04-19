@@ -8,8 +8,8 @@ export default function BestXV({navigation}) {
      const pressHandler = () => {
           navigation.goBack();
      };
-
-
+     
+     
      const[player, setPlayer] = useState([
           {text: 'Player One' , key : '1'},
           {text: 'Player Two' , key : '2'},

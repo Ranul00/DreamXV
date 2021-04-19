@@ -9,7 +9,7 @@ import {
 } from "react-native";
 
 export default function Start({ navigation }) {
-  const goToHome = () => {
+  const goToSignUp = () => {
     navigation.navigate("Signup");
   };
 
@@ -22,13 +22,13 @@ export default function Start({ navigation }) {
         <Text style={styles.text2}>XV</Text>
         <Text style={styles.text1}>Dream</Text>
 
-        <TouchableOpacity
-          titile="go to home"
-          style={styles.btn1}
-          onPress={goToHome}
-        >
-          <Text style={styles.btnText}>Start</Text>
-        </TouchableOpacity>
+        <View style = {styles.btnContainer}>
+          <TouchableOpacity  style={styles.btn1}  onPress={goToSignUp}>
+            <Text style={styles.btnText}>Start</Text>
+          </TouchableOpacity>
+
+        </View>
+        
       </ImageBackground>
     </View>
   );
@@ -37,17 +37,22 @@ export default function Start({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "column",
+    
   },
+
+  btnContainer:{
+    alignItems:'center'
+  },
+
   btn1: {
-    elevation: 8,
+    marginTop:50,
     backgroundColor: "black",
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 12,
-    width: 270,
-    top: 60,
-    left: 60,
+    width: 180,
+    
+    
   },
 
   btnText: {

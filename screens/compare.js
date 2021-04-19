@@ -12,10 +12,20 @@ export default function Compare({ navigation }) {
   };
 
   const [player, setplayer] = useState([
-    {text: 'Select Player', key: '1'},
-    {text: 'Select Player', key: '2'},
+    {name: 'Select Player', key: '1'},
+    {name: 'Select Player', key: '2'},
   ]
   )
+
+  const [playerDetails, setPlayerDetails] = useState([
+    {detail: 'No Players', key: '1'},
+    {detail: 'No Players', key: '2'},
+  ])
+
+  const [playerImage, setPlayerImage] = useState([
+    {image: 'Player Image', key: '1'},
+    {image: 'Player Image', key: '2'},
+  ])
 
   return (
     <View style={styles.container}>
@@ -28,33 +38,66 @@ export default function Compare({ navigation }) {
         <Text style = {styles.text}>Compare</Text>
       </View>
 
-      
-      <FlatList
-          data={player}
-          numColumns={2}
-          renderItem = {({item}) =>{
-            return(
-               <View style = {styles.listContainer}>
-                 <TouchableOpacity style = {styles.itemContainer} onPress = {goToSearch}
-                  >
-                   <Text style = {styles.item}>{item.text}</Text>
-                 </TouchableOpacity>
-                 
-               </View>
-            )
-          }
-          
-          }
-      />
+      <View>
+          <FlatList
+              data={player}
+              numColumns={2}
+              renderItem = {({item}) =>{
+                return(
+                  <View style = {styles.listContainer}>
+                    <TouchableOpacity style = {styles.itemContainer} onPress = {goToSearch}>
+                      <Text style = {styles.item}>{item.name}</Text>
+                    </TouchableOpacity>
+                  </View>
+                )
+              }
+              
+              }
+          />
 
-    <View style = {styles.playerDetailsContainer}>
+          <FlatList
+              data={playerImage}
+              numColumns={2}
+              renderItem = {({item}) =>{
+                return(
+                  <View style = {styles.listContainerImage}>
+                      <View style = {styles.imageContainer}>
+                        <Text style = {styles.item}>{item.image}</Text>
+                      </View>
+                  </View>
+                )
+              }
+              
+              }
+          />
+
+          <FlatList
+              data={playerDetails}
+              numColumns={2}
+              renderItem = {({item}) =>{
+                return(
+                  <View style = {styles.playerDetailsContainer}>
+                    <View  style = {styles.playerDetails}>
+                          <Text style = {styles.item}>{item.detail}</Text>
+                    </View>  
+                  </View>
+                )
+              }
+              
+              }
+          />
+
+      </View>
+      
+
+    {/* <View style = {styles.playerDetailsContainer}>
       <View style = {styles.playerDetails}>
         <Text>No Players Selected</Text>
       </View>
       <View style = {styles.playerDetails}>
       <Text>No Players Selected</Text>
       </View>
-    </View>
+    </View> */}
      
     </View>
   );
@@ -98,7 +141,23 @@ const styles = StyleSheet.create({
   listContainer: {
     flex:1,
     alignItems:'center',
-    paddingTop: 120
+    marginTop:90,
+    paddingTop: 0,
+    backgroundColor: "#2C2C44",
+  },
+  imageContainer:{
+    backgroundColor:'#110066',
+    borderRadius:20,
+    height:150,
+    alignItems:'center'
+  },
+
+  listContainerImage:{
+    flex:1,
+    alignItems:'center',
+    marginTop:50,
+    paddingTop: 0,
+    backgroundColor: "#2C2C44",
   },
   itemContainer: {
     backgroundColor:'#110066',
@@ -107,18 +166,18 @@ const styles = StyleSheet.create({
   
   },
   playerDetailsContainer: {
-    flex:7,
+    flex:1.5,
     flexDirection:'row',
-    paddingTop:2,
+    marginTop:20,
     justifyContent:'center',
+    backgroundColor: "#2C2C44",
     
   },
   playerDetails: {
     backgroundColor:'#72A0C1',
     borderRadius:20,
     height:250,
-    width:172,
-    marginHorizontal: 20,
+    width:175,
     justifyContent:'center',
     alignItems:'center'
     
