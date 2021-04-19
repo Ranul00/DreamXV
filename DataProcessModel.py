@@ -6,6 +6,9 @@ ws = pd.read_excel("Players.xlsx", "Player Details", index_col=None, na_values=[
 def jsonOutput(worksheet):
     players = []
     rows = worksheet.shape[0]
+    addToList(worksheet, rows, players)
+
+    return players
 
 # players add to list function
 def addToList(worksheet, rows, players):
