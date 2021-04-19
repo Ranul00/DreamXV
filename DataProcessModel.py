@@ -29,3 +29,16 @@ def addToList(worksheet, rows, players):
             "team": worksheet.iloc[row, 11]
         }
         players.append(player)
+
+# print(listOutput(ws))
+
+# players according to position sort by RPI function
+def positionSort(worksheet, positionNo):
+
+    # ws_pp means players according to position worksheet
+    ws_pp = worksheet[worksheet["Position No"] == positionNo]
+    ws_pp.sort_values(by="RPI")
+
+    return listOutput(ws_pp)
+
+# print(positionSort(ws,1))
