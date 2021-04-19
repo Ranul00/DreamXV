@@ -2,10 +2,11 @@ import pandas as pd
 
 ws = pd.read_excel("Players.xlsx", "Player Details", index_col=None, na_values=["NA"])
 
-# python dictionary to json object function
-def jsonOutput(worksheet):
+# player list return function
+def listOutput(worksheet):
     players = []
     rows = worksheet.shape[0]
+
     addToList(worksheet, rows, players)
 
     return players
