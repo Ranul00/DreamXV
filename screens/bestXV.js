@@ -39,19 +39,22 @@ export default function BestXV({navigation}) {
                     <Text style = {styles.textTwo}>DreamXV  First  Fifteen </Text>
                </View>
 
-               <View style = {styles.listContainer}>
+               
                     <FlatList
                          data = {player}
+                         numColumns = {2}
                          renderItem = {({item}) => {
                               return(
-                                   <TouchableOpacity style = {styles.itemContainer} onPress = {() => navigation.navigate("PlayerStats", item)}>
-                                         <Text style = {styles.item}>{item.text}</Text>
-                                   </TouchableOpacity>
+                                   <View style = {styles.listContainer}>
+                                        <TouchableOpacity style = {styles.itemContainer} onPress = {() => navigation.navigate("PlayerStats", item)}>
+                                             <Text style = {styles.item}>{item.text}</Text>
+                                        </TouchableOpacity>
+                                   </View>
 
                               )
                          }}
                     />
-               </View>
+               
           </View>
      )
 }
@@ -59,7 +62,7 @@ export default function BestXV({navigation}) {
 const styles = StyleSheet.create({
      container: {
           flex: 1,
-          backgroundColor: "#2C2C44",
+          backgroundColor: "#50409A",
      },
      buttonContainer: {
           paddingTop:Platform.OS === "android" ? StatusBar.currentHeight:0,
@@ -88,9 +91,7 @@ const styles = StyleSheet.create({
           
           //left:10,   
      },
-     textTwoContainer: {
-          marginTop:20
-     },
+     
      textTwo: {
           fontFamily: "FiraSans regular",
           fontSize: 23,
@@ -99,17 +100,34 @@ const styles = StyleSheet.create({
           paddingBottom:10,
           fontWeight:'bold'
      },
+     textTwoContainer:{
+          marginTop:20,
+     },
+     listContainer: {
+          flex:1,
+          alignItems:'center',
+          marginTop:30,
+          //paddingTop: 0,
+          backgroundColor: "#50409A",
+     },
+     
+     
+     itemContainer: {
+          backgroundColor: "#964EC2",
+          borderRadius:10,
+          alignItems:'center',
+          justifyContent:'center',
+          width:140,
+          height:60
+     
+     },
      item: {
           fontFamily: "FiraSans regular",
           fontSize: 15,
           color: "white",
-          padding:10,
+          padding:11,
           marginHorizontal: 10
           
      },
-     listContainer: {
-          flex:1,
-          marginTop:10
-
-     }
+     
 })

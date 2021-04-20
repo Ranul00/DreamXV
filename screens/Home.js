@@ -30,6 +30,7 @@ export default function Home({route, navigation }) {
           setSearchPlayer({ search });   
   };
 
+
   if (text === "") {
     return (
     <View style={styles.container}>
@@ -169,14 +170,23 @@ const styles = StyleSheet.create({
     backgroundColor: "#313866",
     paddingTop:Platform.OS === "android" ? StatusBar.currentHeight:0,
     flex:1,
+    
   },
   textContainer:{
     flex:1,
-    justifyContent:'flex-end'
+    justifyContent:'flex-end',
+    backgroundColor: "#313866",
+    // borderBottomLeftRadius:30,
+    // borderBottomRightRadius:30,
+  
+    
+    
   },
+
   buttonContainer:{
     flex:1,
     backgroundColor: "#313866",
+    
   
   },
 

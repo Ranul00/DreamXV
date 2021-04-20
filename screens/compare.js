@@ -87,18 +87,7 @@ export default function Compare({ navigation }) {
               }
           />
 
-      </View>
-      
-
-    {/* <View style = {styles.playerDetailsContainer}>
-      <View style = {styles.playerDetails}>
-        <Text>No Players Selected</Text>
-      </View>
-      <View style = {styles.playerDetails}>
-      <Text>No Players Selected</Text>
-      </View>
-    </View> */}
-     
+      </View>    
     </View>
   );
 }
@@ -141,6 +130,7 @@ const styles = StyleSheet.create({
   listContainer: {
     flex:1,
     alignItems:'center',
+    justifyContent:'center',
     marginTop:90,
     paddingTop: 0,
     backgroundColor: "#2C2C44",
@@ -149,7 +139,8 @@ const styles = StyleSheet.create({
     backgroundColor:'#110066',
     borderRadius:20,
     height:150,
-    alignItems:'center'
+    alignItems:'center',
+    justifyContent:'center'
   },
 
   listContainerImage:{
