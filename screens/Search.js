@@ -43,7 +43,7 @@ export default function Search({navigation}) {
 const styles = StyleSheet.create({
      container:{
           flex:1,
-          backgroundColor:"#2C2C44",
+          backgroundColor:'#50409A',
           
      },
      searchbar:{

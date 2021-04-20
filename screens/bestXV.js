@@ -36,7 +36,7 @@ export default function BestXV({navigation}) {
                     <Text style = {styles.textOne}>Best XV</Text>
                 </View>
                 <View style = {styles.textTwoContainer}>
-                    <Text style = {styles.textTwo}>DreamXV  First  Fifteen </Text>
+                    <Text style = {styles.textTwo}>Dream Fifteen</Text>
                </View>
 
                
@@ -102,6 +102,7 @@ const styles = StyleSheet.create({
      },
      textTwoContainer:{
           marginTop:20,
+          alignItems:'center'
      },
      listContainer: {
           flex:1,

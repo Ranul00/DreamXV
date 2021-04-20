@@ -18,8 +18,13 @@ export default function PlayerStats({route, navigation}) {
                <View style = {styles.playerNumber}>
                     <Text style = {styles.text}>{text}</Text>
                </View>
+
                <View style = {styles.playerDetails}>
-                    <Text style = {styles.text}>placeholder text two</Text>
+                    <Text style = {styles.text}>player stats displays here</Text>
+               </View>
+
+               <View style = {styles.imageContainer}>
+                    
                </View>
           </View>
      )
@@ -28,20 +33,29 @@ export default function PlayerStats({route, navigation}) {
 const styles = StyleSheet.create({
      container: {
           flex: 1,
-          backgroundColor: "#2C2C44",
+          backgroundColor: "#313866",
      },
      playerNumber: {
           flex: 1,
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: "#2C2C44",
-          
+          backgroundColor: "#313866",      
+     },
+     imageContainer:{
+          width:160,
+          height:160,
+          borderRadius:10,
+          backgroundColor:'white',
+          position:'absolute',
+          alignSelf:'center',
+          marginTop:220  
+        
      },
      playerDetails: {
-          flex: 3,
+          flex: 2,
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor:'#72A0C1',
+          backgroundColor:'#50409A',
           borderTopLeftRadius:40,
           borderTopRightRadius:40,
 

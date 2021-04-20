@@ -94,7 +94,7 @@ export default function Compare({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#2C2C44",
+    backgroundColor: "#313866",
     flex: 1,
   },
   buttonContainer: {
@@ -108,7 +108,8 @@ const styles = StyleSheet.create({
     left:6
   },
   textContainer: {
-    paddingTop:40
+    paddingTop:40,
+    alignItems:'center'
   },
   text: {
     fontFamily: "FiraSans regular",
@@ -133,10 +134,10 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     marginTop:90,
     paddingTop: 0,
-    backgroundColor: "#2C2C44",
+    backgroundColor: "#313866",
   },
   imageContainer:{
-    backgroundColor:'#110066',
+    backgroundColor:'#50409A',
     borderRadius:20,
     height:150,
     alignItems:'center',
@@ -148,10 +149,10 @@ const styles = StyleSheet.create({
     alignItems:'center',
     marginTop:50,
     paddingTop: 0,
-    backgroundColor: "#2C2C44",
+    backgroundColor: "#313866",
   },
   itemContainer: {
-    backgroundColor:'#110066',
+    backgroundColor:'#964EC2',
     borderRadius:20,
     alignItems:'center'
   
@@ -161,11 +162,11 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     marginTop:20,
     justifyContent:'center',
-    backgroundColor: "#2C2C44",
+    backgroundColor: "#313866",
     
   },
   playerDetails: {
-    backgroundColor:'#72A0C1',
+    backgroundColor:'#50409A',
     borderRadius:20,
     height:250,
     width:175,
