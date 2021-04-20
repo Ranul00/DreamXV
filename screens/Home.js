@@ -166,7 +166,7 @@ export default function Home({route, navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#2C2C44",
+    backgroundColor: "#313866",
     paddingTop:Platform.OS === "android" ? StatusBar.currentHeight:0,
     flex:1,
   },
@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer:{
     flex:1,
-    backgroundColor: "#2C2C44",
+    backgroundColor: "#313866",
   
   },
 
@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 20,
     height: 224.31,
     width: 154,
-    backgroundColor: "#1A1E49",
+    backgroundColor: "#50409A",
     alignItems: "center",
     top:90,
     left: 30,
@@ -217,7 +217,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 20,
     height: 99,
     width: 154,
-    backgroundColor: "#1A1E49",
+    backgroundColor: "#50409A",
     alignItems: "center",
     //top: 0,
     bottom:132,
@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 20,
     height: 99,
     width: 154,
-    backgroundColor: "#1A1E49",
+    backgroundColor: "#50409A",
     alignItems: "center",
     //top: 0,
     bottom:112,
@@ -258,7 +258,7 @@ containerStyle:{
     borderRadius: 30,
     width:380, 
     height:50,
-    borderColor:'#d3dff5'
+    borderColor:'#82c5f5'
 },
 inputContainerStyle:{
     backgroundColor: '#d3dff5',

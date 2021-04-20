@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ImageBackground } from "react-native";
 import {
   StyleSheet,
   Text,
@@ -20,38 +21,45 @@ export default function Signup({ navigation }) {
 
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-      <View style={styles.form}>
-        <Text style={styles.header}>Get Started</Text>
-
-        <TextInput
-          style={styles.textinput}
-          placeholder="Your name"
-          placeholderTextColor="#fff"
-          onChangeText={(value) => {
-            setName({ text: value });
-          }}
-        />
-        <TextInput
-          style={styles.textinput}
-          placeholder="Email"
-          placeholderTextColor="#fff"
-        />
-        <TouchableOpacity
-          style={styles.btn1}
-          onPress={() => {
-            navigation.navigate("Home", name);
-          }}
+      <ImageBackground  source={require("../assets/pics/bgpic.jpg")}
+        style={styles.image}
+        blurRadius = {1}
         >
-          <Text style={styles.btnText}>Confirm</Text>
-        </TouchableOpacity>
+      <View style={styles.form}>
+            <Text style={styles.header}>Get Started</Text>
+
+            <TextInput
+              style={styles.textinput}
+              placeholder="Your name"
+              placeholderTextColor="#fff"
+              onChangeText={(value) => {
+                setName({ text: value });
+              }}
+            />
+            <TextInput
+              style={styles.textinput}
+              placeholder="Email"
+              placeholderTextColor="#fff"
+            />
+            <TouchableOpacity
+              style={styles.btn1}
+              onPress={() => {
+                navigation.navigate("Home", name);
+              }}
+            >
+              <Text style={styles.btnText}>Confirm</Text>
+            </TouchableOpacity>
+        
+        
       </View>
+      </ImageBackground>
     </TouchableWithoutFeedback>
   );
 }
 
 const styles = StyleSheet.create({
   form: {
-    backgroundColor: "#2C2C44",
+    
     flex: 1,
     alignItems: "center",
   },
@@ -94,5 +102,11 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     borderBottomColor: "#f8f8f8",
     borderBottomWidth: 1,
+  },
+  image: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center",
+    
   },
 });
