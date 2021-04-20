@@ -11,9 +11,16 @@ export default function PlayerStats({route, navigation}) {
 
      return (
           <View style = {styles.container}>
-               <TouchableOpacity style={styles.buttonContainer} onPress={backToBestXV}>
-                    <Text style = {styles.button}>Back</Text>
-               </TouchableOpacity>
+               <View style = {styles.navigationContainer}>
+                    <TouchableOpacity style={styles.buttonContainer} onPress={backToBestXV}>
+                         <Text style = {styles.button}>Back</Text>
+                    </TouchableOpacity>
+
+                    <View style = {styles.textOneContainer}>
+                         <Text style = {styles.textOne}>Player Stats</Text>
+                    </View>
+               </View>
+               
                
                <View style = {styles.playerNumber}>
                     <Text style = {styles.text}>{text}</Text>
@@ -34,6 +41,41 @@ const styles = StyleSheet.create({
      container: {
           flex: 1,
           backgroundColor: "#313866",
+          paddingTop:Platform.OS === "android" ? StatusBar.currentHeight:0,
+     },
+     navigationContainer:{
+          //flex:1,
+          flexDirection:'row',
+          backgroundColor:'#0D1B46',
+          justifyContent:'space-between',
+          height:50,
+          borderBottomRightRadius:10,
+          borderBottomLeftRadius:10
+          
+     },
+     textOneContainer: {
+          justifyContent:'center',
+          marginRight:10
+          
+          
+     },
+     buttonContainer:{
+          backgroundColor:'#313866',
+          alignItems:'center',
+          height:40,
+          width:70,
+          marginLeft:10,
+          marginVertical:5,
+          justifyContent:'center',
+          borderRadius:10
+     },
+     textOne: {
+          fontFamily: "FiraSans regular",
+          fontSize: 18,
+          color: '#fff',
+          fontWeight:'bold'
+          
+          //left:10,   
      },
      playerNumber: {
           flex: 1,
@@ -65,15 +107,11 @@ const styles = StyleSheet.create({
           fontSize: 28,
           color: '#fff'
      },
-     buttonContainer: {
-          paddingTop:Platform.OS === "android" ? StatusBar.currentHeight:0,
-          width:100,
-     },
      button: {
           color:'white',
           fontWeight:'bold',
           fontSize:18,
-          left:6
+          //left:6
      },
 
 })

@@ -29,31 +29,38 @@ export default function BestXV({navigation}) {
      ])
      return (
           <View style = {styles.container}>
-               <TouchableOpacity style={styles.buttonContainer} onPress={pressHandler}>
-                     <Text style = {styles.button}>Home</Text>
-               </TouchableOpacity>
-               <View style = {styles.textOneContainer}>
-                    <Text style = {styles.textOne}>Best XV</Text>
-                </View>
-                <View style = {styles.textTwoContainer}>
-                    <Text style = {styles.textTwo}>Dream Fifteen</Text>
+               <View style = {styles.navigationContainer}>
+                    <TouchableOpacity style={styles.buttonContainer} onPress={pressHandler}>
+                         <Text style = {styles.button}>Home</Text>
+                    </TouchableOpacity>
+
+                    <View style = {styles.textOneContainer}>
+                         <Text style = {styles.textOne}>Best XV</Text>
+                    </View>
+
                </View>
-
                
-                    <FlatList
-                         data = {player}
-                         numColumns = {2}
-                         renderItem = {({item}) => {
-                              return(
-                                   <View style = {styles.listContainer}>
-                                        <TouchableOpacity style = {styles.itemContainer} onPress = {() => navigation.navigate("PlayerStats", item)}>
-                                             <Text style = {styles.item}>{item.text}</Text>
-                                        </TouchableOpacity>
-                                   </View>
+               <View style = {styles.teamContainer}>
+                    <View style = {styles.textTwoContainer}>
+                         <Text style = {styles.textTwo}>Dream Fifteen</Text>
+                    </View>
 
-                              )
-                         }}
-                    />
+                    
+                         <FlatList
+                              data = {player}
+                              numColumns = {2}
+                              renderItem = {({item}) => {
+                                   return(
+                                        <View style = {styles.listContainer}>
+                                             <TouchableOpacity style = {styles.itemContainer} onPress = {() => navigation.navigate("PlayerStats", item)}>
+                                                  <Text style = {styles.item}>{item.text}</Text>
+                                             </TouchableOpacity>
+                                        </View>
+
+                                   )
+                              }}
+                         />
+                    </View>
                
           </View>
      )
@@ -63,35 +70,52 @@ const styles = StyleSheet.create({
      container: {
           flex: 1,
           backgroundColor: "#50409A",
-     },
-     buttonContainer: {
           paddingTop:Platform.OS === "android" ? StatusBar.currentHeight:0,
-          width:100,
+     },
+     navigationContainer:{
+          //flex:1,
+          flexDirection:'row',
+          backgroundColor:'#0D1B46',
+          justifyContent:'space-between',
+          height:50,
+          borderBottomRightRadius:10,
+          borderBottomLeftRadius:10
           
      },
      button: {
           color:'white',
           fontWeight:'bold',
           fontSize:18,
-          left:6
+          //left:6
+     },
+     buttonContainer:{
+          backgroundColor:'#313866',
+          alignItems:'center',
+          height:40,
+          width:70,
+          marginLeft:10,
+          marginVertical:5,
+          justifyContent:'center',
+          borderRadius:10
      },
      textOneContainer: {
-          backgroundColor: "#1A1E49",
-          borderRadius: 10,
-          width: 100,
-          height: 30,
-          alignItems:'center',
-          marginTop:25,
-          marginLeft:8
+          justifyContent:'center',
+          marginRight:10
+          
+          
      },
      textOne: {
           fontFamily: "FiraSans regular",
           fontSize: 18,
           color: '#fff',
+          fontWeight:'bold'
           
           //left:10,   
      },
-     
+     teamContainer:{
+          flex:1
+     },
+    
      textTwo: {
           fontFamily: "FiraSans regular",
           fontSize: 23,

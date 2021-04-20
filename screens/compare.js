@@ -30,9 +30,18 @@ export default function Compare({ navigation }) {
   return (
     <View style={styles.container}>
 
-      <TouchableOpacity style={styles.buttonContainer} onPress={pressHandler}>
-        <Text style = {styles.button}>Home</Text>
-      </TouchableOpacity>
+      <View style = {styles.navigationContainer}>
+          <TouchableOpacity style={styles.buttonContainer} onPress={pressHandler}>
+            <Text style = {styles.button}>Home</Text>
+          </TouchableOpacity>
+
+          <View style = {styles.textOneContainer}>
+            <Text style = {styles.textOne}>Compare</Text>
+          </View>
+
+      </View>
+
+      
 
       <View style = {styles.textContainer}>
         <Text style = {styles.text}>Compare</Text>
@@ -96,17 +105,49 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#313866",
     flex: 1,
-  },
-  buttonContainer: {
     paddingTop:Platform.OS === "android" ? StatusBar.currentHeight:0,
-    width:100,
   },
-  button: {
+  navigationContainer:{
+    //flex:1,
+    flexDirection:'row',
+    backgroundColor:'#0D1B46',
+    justifyContent:'space-between',
+    height:50,
+    borderBottomRightRadius:10,
+    borderBottomLeftRadius:10
+    
+},
+button: {
     color:'white',
     fontWeight:'bold',
     fontSize:18,
-    left:6
-  },
+    //left:6
+},
+buttonContainer:{
+    backgroundColor:'#313866',
+    alignItems:'center',
+    height:40,
+    width:70,
+    marginLeft:10,
+    marginVertical:5,
+    justifyContent:'center',
+    borderRadius:10
+},
+textOneContainer: {
+    justifyContent:'center',
+    marginRight:10
+    
+    
+},
+textOne: {
+    fontFamily: "FiraSans regular",
+    fontSize: 18,
+    color: '#fff',
+    fontWeight:'bold'
+    
+    //left:10,   
+},
+
   textContainer: {
     paddingTop:40,
     alignItems:'center'

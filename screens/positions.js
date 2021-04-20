@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   View,
@@ -10,6 +10,21 @@ import {
 import { globalStyles } from "../styles/global";
 
 export default function ReviewDetails({ navigation }) {
+
+  const[position, setPosition] = useState([
+    {name:'Hooker', key:'1'},
+    {name:'Prop', key:'2'},
+    {name:'Lock', key:'3'},
+    {name:'Blind-Side-Flanker', key:'4'},
+    {name:'Open-Side-Flanker', key:'5'},
+    {name:'Number 8', key:'6'},
+    {name:'Scrun Half', key:'7'},
+    {name:'Fly Half', key:'8'},
+    {name:'Center', key:'9'},
+    {name:'Full Back', key:'10'},
+  ]);
+
+
   const pressHandler = () => {
     navigation.goBack();
   };
