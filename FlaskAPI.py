@@ -18,4 +18,4 @@ def getBestTeam():
     return json.dumps(team, indent=2)
 
 if __name__ == "__main__":
-    app.run("192.168.8.101", debug=True)
+    app.run(debug=True)
