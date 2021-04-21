@@ -1,2 +1,0 @@
-# DreamXV
-SDGP group project
