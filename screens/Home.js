@@ -6,12 +6,15 @@ import { globalStyles } from "../styles/global";
 export default function Home({route, navigation }) {
   const {text} = route.params;
 
+
   const goToPositions = () => {
     navigation.navigate("Positions");
   };
 
   const goTobestXV = () => {
+    
     navigation.navigate("BestXV");
+
   };
 
   const goToCompare = () => {
@@ -81,7 +84,8 @@ export default function Home({route, navigation }) {
           
           <TouchableOpacity
             titile="go to bestxv"
-            onPress={goTobestXV}
+            //onPress={getPlayerNames}
+            onPress = {goTobestXV}
             style={styles.btn2}
           >
             <Text style={globalStyles.btnText}>Best XV</Text>
@@ -153,7 +157,7 @@ export default function Home({route, navigation }) {
           
           <TouchableOpacity
             titile="go to bestxv"
-            onPress={goTobestXV}
+            onPress={getPlayerNames}
             style={styles.btn2}
           >
             <Text style={globalStyles.btnText}>Best XV</Text>
@@ -179,6 +183,17 @@ export default function Home({route, navigation }) {
   }
 
   
+}
+
+async function getPlayerNames(){
+  try{
+       let response = await fetch('http://192.168.8.104:5000/bestTeam');
+       let responseJSON = await response.json();
+       console.log(responseJSON[1].name);
+  }
+  catch (error){
+       console.log(error);
+  }
 }
 
 const styles = StyleSheet.create({

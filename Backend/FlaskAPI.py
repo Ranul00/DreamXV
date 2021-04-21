@@ -12,10 +12,10 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 
 db = SQLAlchemy(app)
 
-@app.route('/bestTeam')
+@app.route('/bestTeam', methods=["GET"])
 def getBestTeam():
     team = DataProcessModel.bestTeam()
     return json.dumps(team, indent=2)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='192.168.8.104', debug=True)

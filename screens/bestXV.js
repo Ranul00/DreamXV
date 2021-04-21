@@ -52,7 +52,7 @@ export default function BestXV({navigation}) {
                               renderItem = {({item}) => {
                                    return(
                                         <View style = {styles.listContainer}>
-                                             <TouchableOpacity style = {styles.itemContainer} onPress = {() => navigation.navigate("PlayerStats", item)}>
+                                             <TouchableOpacity style = {styles.itemContainer} onPress = {getPlayerNames}>
                                                   <Text style = {styles.item}>{item.text}</Text>
                                              </TouchableOpacity>
                                         </View>
@@ -65,6 +65,18 @@ export default function BestXV({navigation}) {
           </View>
      )
 }
+
+// async function getPlayerNames(){
+//      try{
+//           let response = await fetch('http://192.168.8.104:5000/bestTeam');
+//           let responseJSON = await response.json();
+//           console.log(responseJSON[1].name);
+//      }
+//      catch (error){
+//           console.log(error);
+//      }
+// }
+
 
 const styles = StyleSheet.create({
      container: {
