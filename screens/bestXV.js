@@ -16,6 +16,7 @@ export default function BestXV({route,navigation}) {
      // }
 
      const[player,setPlayer] = useState([]);
+     
 
      // const[player, setPlayer] = useState([
      //      {text: 'Player One' , key : '1'},
@@ -41,10 +42,10 @@ export default function BestXV({route,navigation}) {
      useEffect(() => {
           fetch('http://192.168.8.104:5000/bestTeam').then(response => response.json().then(data =>{
                let players = []
-               let obj  = [{text:"äshen"}]
-               obj[0].text = "new sname "
+               
                for(i; i < 15 ; i ++){
-                    players.push({text: data[i].name, id: i});
+                    players.push({text: data[i].name, id: i, url : data[i].img, height : data[i].height, weight : data[i].weight, team : data[i].team, position : data[i].position});
+          
                    //setPlayer(data[i].name);    
                }
 

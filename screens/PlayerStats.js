@@ -1,9 +1,15 @@
 import React from 'react'
-import { StyleSheet, Text, View ,TouchableOpacity,StatusBar} from 'react-native'
+import { StyleSheet, Text, View ,TouchableOpacity,StatusBar,Image} from 'react-native'
 
 export default function PlayerStats({route, navigation}) {
 
      const {text} = route.params;
+    
+     var x = '\"' + url + '\"' ;
+
+     const {url} = route.params;
+
+      
 
      const backToBestXV = () => {
           navigation.goBack("PlayerStats");
@@ -31,6 +37,10 @@ export default function PlayerStats({route, navigation}) {
                </View>
 
                <View style = {styles.imageContainer}>
+                    
+                    {/* <Image 
+                    style = {styles.image}
+                    source= {require(x)}/> */}
                     
                </View>
           </View>
@@ -89,13 +99,16 @@ const styles = StyleSheet.create({
           width:160,
           height:160,
           borderRadius:10,
-          backgroundColor:'black',
           borderColor: "#65BCBF",
           borderWidth:2,
           position:'absolute',
           alignSelf:'center',
           marginTop:220  
         
+     },
+     image:{
+          width:150,
+          height:150, 
      },
      playerDetails: {
           flex: 2,
