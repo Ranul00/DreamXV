@@ -1,32 +1,60 @@
-import React , { useState }from 'react'
+import React , { useState, useEffect }from 'react'
 import { StatusBar } from 'react-native';
 import { Platform } from 'react-native';
 import { StyleSheet, Text, View,FlatList, TouchableOpacity, Button } from 'react-native'
 
 
-export default function BestXV({navigation}) {
+export default function BestXV({route,navigation}) {
      const pressHandler = () => {
           navigation.goBack();
      };
-     
-     
-     const[player, setPlayer] = useState([
-          {text: 'Player One' , key : '1'},
-          {text: 'Player Two' , key : '2'},
-          {text: 'Player Three' , key : '3'},
-          {text: 'Player Four' , key : '4'},
-          {text: 'Player Five' , key : '5'},
-          {text: 'Player Six' , key : '6'},
-          {text: 'Player Seven' , key : '7'},
-          {text: 'Player Eight' , key : '8'},
-          {text: 'Player Nine' , key : '9'},
-          {text: 'Player Ten' , key : '10'},
-          {text: 'Player Eleven' , key : '11'},
-          {text: 'Player Twelve' , key : '12'},
-          {text: 'Player Thirtenn' , key : '13'},
-          {text: 'Player Fourteen' , key : '14'},
-          {text: 'Player Fifteen' , key : '15'},
-     ])
+
+
+     // var i;
+     // for(i = 0; i < 15 ; i++){
+     //      const {name} = route.params; 
+     // }
+
+     const[player,setPlayer] = useState([]);
+
+     // const[player, setPlayer] = useState([
+     //      {text: 'Player One' , key : '1'},
+     //      {text: 'Player Two' , key : '2'},
+     //      {text: 'Player Three' , key : '3'},
+     //      {text: 'Player Four' , key : '4'},
+     //      {text: 'Player Five' , key : '5'},
+     //      {text: 'Player Six' , key : '6'},
+     //      {text: 'Player Seven' , key : '7'},
+     //      {text: 'Player Eight' , key : '8'},
+     //      {text: 'Player Nine' , key : '9'},
+     //      {text: 'Player Ten' , key : '10'},
+     //      {text: 'Player Eleven' , key : '11'},
+     //      {text: 'Player Twelve' , key : '12'},
+     //      {text: 'Player Thirtenn' , key : '13'},
+     //      {text: 'Player Fourteen' , key : '14'},
+     //      {text: 'Player Fifteen' , key : '15'},
+     // ])
+
+     var playerNames = new Array();
+
+     var i = 0;
+     useEffect(() => {
+          fetch('http://192.168.8.104:5000/bestTeam').then(response => response.json().then(data =>{
+               let players = []
+               let obj  = [{text:"äshen"}]
+               obj[0].text = "new sname "
+               for(i; i < 15 ; i ++){
+                    players.push({text: data[i].name, id: i});
+                   //setPlayer(data[i].name);    
+               }
+
+               setPlayer(players)
+               // var x = playerNames.toString();
+               // console.log(x);
+          })
+          );
+     }, [])
+
      return (
           <View style = {styles.container}>
                <View style = {styles.navigationContainer}>
@@ -52,7 +80,7 @@ export default function BestXV({navigation}) {
                               renderItem = {({item}) => {
                                    return(
                                         <View style = {styles.listContainer}>
-                                             <TouchableOpacity style = {styles.itemContainer} onPress = {getPlayerNames}>
+                                             <TouchableOpacity style = {styles.itemContainer} onPress = {() => navigation.navigate("PlayerStats", item)}>
                                                   <Text style = {styles.item}>{item.text}</Text>
                                              </TouchableOpacity>
                                         </View>

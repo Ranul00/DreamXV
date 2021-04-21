@@ -12,7 +12,6 @@ export default function Home({route, navigation }) {
   };
 
   const goTobestXV = () => {
-    
     navigation.navigate("BestXV");
 
   };
@@ -65,7 +64,7 @@ export default function Home({route, navigation }) {
         <View style = {styles.buttonContainer}>
           
           <TouchableOpacity
-            titile="go to positionss"
+            titile="go to positions"
             onPress={goToPositions}
             style={styles.btn1}
           >
@@ -84,7 +83,6 @@ export default function Home({route, navigation }) {
           
           <TouchableOpacity
             titile="go to bestxv"
-            //onPress={getPlayerNames}
             onPress = {goTobestXV}
             style={styles.btn2}
           >
@@ -101,8 +99,6 @@ export default function Home({route, navigation }) {
           >
             <Text style={globalStyles.btnText}>Compare</Text>
           </TouchableOpacity>
-
-          
 
           </View>
     </View>
@@ -157,7 +153,7 @@ export default function Home({route, navigation }) {
           
           <TouchableOpacity
             titile="go to bestxv"
-            onPress={getPlayerNames}
+            onPress = {goTobestXV}
             style={styles.btn2}
           >
             <Text style={globalStyles.btnText}>Best XV</Text>
@@ -183,18 +179,19 @@ export default function Home({route, navigation }) {
   }
 
   
+
 }
 
-async function getPlayerNames(){
-  try{
-       let response = await fetch('http://192.168.8.104:5000/bestTeam');
-       let responseJSON = await response.json();
-       console.log(responseJSON[1].name);
-  }
-  catch (error){
-       console.log(error);
-  }
-}
+// async function getPlayerNames(){
+//   try{
+//        let response = await fetch('http://192.168.8.104:5000/bestTeam');
+//        let responseJSON = await response.json();
+//        console.log(responseJSON);
+//   }
+//   catch (error){
+//        console.log(error);
+//   }
+// }
 
 const styles = StyleSheet.create({
   container: {
@@ -208,17 +205,12 @@ const styles = StyleSheet.create({
     justifyContent:'flex-end',
     backgroundColor: "#141E24",
     // borderBottomLeftRadius:30,
-    // borderBottomRightRadius:30,
-  
-    
-    
+    // borderBottomRightRadius:30, 
   },
 
   buttonContainer:{
     flex:1,
     backgroundColor: "#141E24",
-    
-  
   },
 
   text: {
