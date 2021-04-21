@@ -41,13 +41,11 @@ export default function Compare({ navigation }) {
 
       </View>
 
-      
+      <View style = {styles.main}>
+        <View style = {styles.textContainer}>
+          <Text style = {styles.text}>Compare</Text>
+        </View>
 
-      <View style = {styles.textContainer}>
-        <Text style = {styles.text}>Compare</Text>
-      </View>
-
-      <View>
           <FlatList
               data={player}
               numColumns={2}
@@ -103,19 +101,23 @@ export default function Compare({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#313866",
+    backgroundColor: "#0B1114",
     flex: 1,
     paddingTop:Platform.OS === "android" ? StatusBar.currentHeight:0,
   },
   navigationContainer:{
     //flex:1,
     flexDirection:'row',
-    backgroundColor:'#0D1B46',
+    backgroundColor:'#101B37',
     justifyContent:'space-between',
+    borderBottomColor:"#4FE0B6",
+    borderBottomWidth:1,
     height:50,
-    borderBottomRightRadius:10,
-    borderBottomLeftRadius:10
     
+    
+},
+main:{
+  flex:1
 },
 button: {
     color:'white',
@@ -124,14 +126,15 @@ button: {
     //left:6
 },
 buttonContainer:{
-    backgroundColor:'#313866',
-    alignItems:'center',
-    height:40,
-    width:70,
-    marginLeft:10,
-    marginVertical:5,
-    justifyContent:'center',
-    borderRadius:10
+  borderWidth:2,
+  borderColor:'#F64668',
+  alignItems:'center',
+  height:40,
+  width:70,
+  marginLeft:10,
+  marginVertical:5,
+  justifyContent:'center',
+  borderRadius:10
 },
 textOneContainer: {
     justifyContent:'center',
@@ -149,7 +152,7 @@ textOne: {
 },
 
   textContainer: {
-    paddingTop:40,
+    paddingTop:0,
     alignItems:'center'
   },
   text: {
@@ -175,11 +178,11 @@ textOne: {
     justifyContent:'center',
     marginTop:90,
     paddingTop: 0,
-    backgroundColor: "#313866",
+    backgroundColor: "#0B1114",
   },
   imageContainer:{
-    backgroundColor:'#50409A',
-    borderRadius:20,
+    borderWidth:1,
+    borderColor:"#62A2A2",
     height:150,
     alignItems:'center',
     justifyContent:'center'
@@ -190,25 +193,26 @@ textOne: {
     alignItems:'center',
     marginTop:50,
     paddingTop: 0,
-    backgroundColor: "#313866",
+    backgroundColor: "#0B1114",
   },
   itemContainer: {
-    backgroundColor:'#964EC2',
-    borderRadius:20,
+    borderWidth:2,
+    borderColor:"#62A2A2",
     alignItems:'center'
   
   },
   playerDetailsContainer: {
-    flex:1.5,
+    flex:1,
     flexDirection:'row',
     marginTop:20,
     justifyContent:'center',
-    backgroundColor: "#313866",
+    backgroundColor: "#0B1114",
     
   },
   playerDetails: {
-    backgroundColor:'#50409A',
-    borderRadius:20,
+    borderWidth:1,
+    borderColor:"#62A2A2",
+    backgroundColor: "#141E24",
     height:250,
     width:175,
     justifyContent:'center',

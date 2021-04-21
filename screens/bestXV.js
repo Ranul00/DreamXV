@@ -69,17 +69,18 @@ export default function BestXV({navigation}) {
 const styles = StyleSheet.create({
      container: {
           flex: 1,
-          backgroundColor: "#50409A",
+          backgroundColor: "#141E24",
           paddingTop:Platform.OS === "android" ? StatusBar.currentHeight:0,
      },
      navigationContainer:{
           //flex:1,
           flexDirection:'row',
-          backgroundColor:'#0D1B46',
+          backgroundColor:'#101B37',
           justifyContent:'space-between',
+          borderBottomColor:"#4FE0B6",
+          borderBottomWidth:1,
           height:50,
-          borderBottomRightRadius:10,
-          borderBottomLeftRadius:10
+          
           
      },
      button: {
@@ -89,7 +90,8 @@ const styles = StyleSheet.create({
           //left:6
      },
      buttonContainer:{
-          backgroundColor:'#313866',
+          borderWidth:2,
+          borderColor:'#F64668',
           alignItems:'center',
           height:40,
           width:70,
@@ -133,18 +135,15 @@ const styles = StyleSheet.create({
           alignItems:'center',
           marginTop:30,
           //paddingTop: 0,
-          backgroundColor: "#50409A",
-     },
-     
-     
+          backgroundColor: "#141E24",
+     }, 
      itemContainer: {
-          backgroundColor: "#964EC2",
-          borderRadius:10,
+          borderWidth:1,
+          borderColor: "#65BCBF",
           alignItems:'center',
           justifyContent:'center',
           width:140,
           height:60
-     
      },
      item: {
           fontFamily: "FiraSans regular",

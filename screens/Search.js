@@ -49,7 +49,7 @@ export default function Search({navigation}) {
 const styles = StyleSheet.create({
      container:{
           flex:1,
-          backgroundColor:'#50409A',
+          backgroundColor: "#141E24",
           paddingTop:Platform.OS === "android" ? StatusBar.currentHeight:0,
           
      },
@@ -57,11 +57,12 @@ const styles = StyleSheet.create({
      navigationContainer:{
           //flex:1,
           flexDirection:'row',
-          backgroundColor:'#0D1B46',
+          backgroundColor:'#101B37',
           justifyContent:'space-between',
+          borderBottomColor:"#4FE0B6",
+          borderBottomWidth:1,
           height:50,
-          borderBottomRightRadius:10,
-          borderBottomLeftRadius:10
+          
           
       },
       button: {
@@ -71,7 +72,8 @@ const styles = StyleSheet.create({
           //left:6
       },
       buttonContainer:{
-          backgroundColor:'#313866',
+          borderWidth:2,
+          borderColor:'#F64668',
           alignItems:'center',
           height:40,
           width:70,
@@ -79,7 +81,7 @@ const styles = StyleSheet.create({
           marginVertical:5,
           justifyContent:'center',
           borderRadius:10
-      },
+     },
       textOneContainer: {
           justifyContent:'center',
           marginRight:10

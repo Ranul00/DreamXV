@@ -39,78 +39,15 @@ export default function Home({route, navigation }) {
         <Text style={styles.text}>Hello,</Text>
         <Text style={styles.name}>Guest.</Text>
 
-        <TouchableOpacity onPress = {goToSearch}>
-          <View style = {styles.searchbar}>
+        <TouchableOpacity onPress = {goToSearch} style = {styles.searchbar}>
+          <View >
           <SearchBar
             inputStyle={styles.inputStyle}
             containerStyle={styles.containerStyle}
             placeholderTextColor={'gray'}
             placeholder={'Search'}
             inputContainerStyle={styles.inputContainerStyle}
-            onChangeText={updateSearch}
-            value={search}
-          /> 
-
-          </View>
-
-        </TouchableOpacity>
-        
-
-        </View>
-
-      <View style = {styles.buttonContainer}>
-        <View>
-        <TouchableOpacity
-          titile="go to positionss"
-          style={styles.btn1}
-          onPress={goToPositions}
-        >
-          <Text style={globalStyles.btnText}>Positions</Text>
-        </TouchableOpacity>
-
-        </View>
-
-        <View>
-        <TouchableOpacity
-          titile="go to bestxv"
-          style={styles.btn2}
-          onPress={goTobestXV}
-        >
-          <Text style={globalStyles.btnText}>Best XV</Text>
-        </TouchableOpacity>
-
-        </View>
-
-        <View>
-        <TouchableOpacity
-          titile="go to compare"
-          style={styles.btn3}
-          onPress={goToCompare}
-        >
-          <Text style={globalStyles.btnText}>Compare</Text>
-        </TouchableOpacity>
-
-        </View>
-
-        </View>
-    </View>
-  )
-  }else{
-    return (
-      <View style={styles.container}>
-
-        <View style = {styles.textContainer}>
-        <Text style={styles.text}>Hello,</Text>
-        <Text style={styles.name}>{text}.</Text>
-
-        <TouchableOpacity onPress = {goToSearch}>
-          <View style = {styles.searchbar}>
-          <SearchBar
-            inputStyle={styles.inputStyle}
-            containerStyle={styles.containerStyle}
-            placeholderTextColor={'gray'}
-            placeholder={'Search'}
-            inputContainerStyle={styles.inputContainerStyle}
+            onPress = {goToSearch}
             onChangeText={updateSearch}
             value={search}
           /> 
@@ -123,40 +60,119 @@ export default function Home({route, navigation }) {
         </View>
         
         <View style = {styles.buttonContainer}>
-        <View>
-        <TouchableOpacity
-          titile="go to positionss"
-          style={styles.btn1}
-          onPress={goToPositions}
-        >
-          <Text style={globalStyles.btnText}>Positions</Text>
+          
+          <TouchableOpacity
+            titile="go to positionss"
+            onPress={goToPositions}
+            style={styles.btn1}
+          >
+            <Text style={globalStyles.btnText}>Positions</Text>
+          </TouchableOpacity>
+
+        
+
+          
+          <TouchableOpacity style={styles.btn4}>
+            <Text style={globalStyles.btnText}>Predictions</Text>
+          </TouchableOpacity>
+
+          
+
+          
+          <TouchableOpacity
+            titile="go to bestxv"
+            onPress={goTobestXV}
+            style={styles.btn2}
+          >
+            <Text style={globalStyles.btnText}>Best XV</Text>
+          </TouchableOpacity>
+
+          
+
+          
+          <TouchableOpacity
+            titile="go to compare"
+            onPress={goToCompare}
+            style={styles.btn3}
+          >
+            <Text style={globalStyles.btnText}>Compare</Text>
+          </TouchableOpacity>
+
+          
+
+          </View>
+    </View>
+  )
+  }else{
+    return (
+      <View style={styles.container}>
+
+        <View style = {styles.textContainer}>
+        <Text style={styles.text}>Hello,</Text>
+        <Text style={styles.name}>{text}.</Text>
+
+        <TouchableOpacity onPress = {goToSearch} style = {styles.searchbar}>
+          <View >
+          <SearchBar
+            inputStyle={styles.inputStyle}
+            containerStyle={styles.containerStyle}
+            placeholderTextColor={'gray'}
+            placeholder={'Search'}
+            inputContainerStyle={styles.inputContainerStyle}
+            onPress = {goToSearch}
+            onChangeText={updateSearch}
+            value={search}
+          /> 
+
+          </View>
+
         </TouchableOpacity>
+        
 
         </View>
+        
+        <View style = {styles.buttonContainer}>
+          
+          <TouchableOpacity
+            titile="go to positionss"
+            onPress={goToPositions}
+            style={styles.btn1}
+          >
+            <Text style={globalStyles.btnText}>Positions</Text>
+          </TouchableOpacity>
 
-        <View>
-        <TouchableOpacity
-          titile="go to bestxv"
-          style={styles.btn2}
-          onPress={goTobestXV}
-        >
-          <Text style={globalStyles.btnText}>Best XV</Text>
-        </TouchableOpacity>
+        
 
-        </View>
+          
+          <TouchableOpacity style={styles.btn4}>
+            <Text style={globalStyles.btnText}>Predictions</Text>
+          </TouchableOpacity>
 
-        <View>
-        <TouchableOpacity
-          titile="go to compare"
-          style={styles.btn3}
-          onPress={goToCompare}
-        >
-          <Text style={globalStyles.btnText}>Compare</Text>
-        </TouchableOpacity>
+          
 
-        </View>
+          
+          <TouchableOpacity
+            titile="go to bestxv"
+            onPress={goTobestXV}
+            style={styles.btn2}
+          >
+            <Text style={globalStyles.btnText}>Best XV</Text>
+          </TouchableOpacity>
 
-        </View>
+          
+
+          
+          <TouchableOpacity
+            titile="go to compare"
+            onPress={goToCompare}
+            style={styles.btn3}
+          >
+            <Text style={globalStyles.btnText}>Compare</Text>
+          </TouchableOpacity>
+
+          
+
+          </View>
 
       </View>
     );
@@ -167,7 +183,7 @@ export default function Home({route, navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#313866",
+    backgroundColor: "#141E24",
     paddingTop:Platform.OS === "android" ? StatusBar.currentHeight:0,
     flex:1,
     
@@ -175,7 +191,7 @@ const styles = StyleSheet.create({
   textContainer:{
     flex:1,
     justifyContent:'flex-end',
-    backgroundColor: "#313866",
+    backgroundColor: "#141E24",
     // borderBottomLeftRadius:30,
     // borderBottomRightRadius:30,
   
@@ -185,7 +201,7 @@ const styles = StyleSheet.create({
 
   buttonContainer:{
     flex:1,
-    backgroundColor: "#313866",
+    backgroundColor: "#141E24",
     
   
   },
@@ -207,47 +223,47 @@ const styles = StyleSheet.create({
 
   btn1: {
     justifyContent: "center",
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
-    height: 224.31,
-    width: 154,
-    backgroundColor: "#50409A",
-    alignItems: "center",
-    top:90,
-    left: 30,
-    elevation: 11,
-  },
-  btn2: {
-    justifyContent: "center",
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
     height: 99,
     width: 154,
-    backgroundColor: "#50409A",
+    borderWidth:3,
+    borderColor:"#62A2A2",
     alignItems: "center",
-    //top: 0,
+    top:65,
+    left: 25,
+    
+  },
+
+  btn4: {
+    justifyContent: "center",
+    height: 99,
+    width: 154,
+    borderWidth:3,
+    borderColor:"#62A2A2",
+    alignItems: "center",
+    top:90,
+    left: 25,
+  },
+
+  btn2: {
+    justifyContent: "center",
+    height: 99,
+    width: 154,
+    borderWidth:3,
+    borderColor:"#62A2A2",
+    alignItems: "center",
     bottom:132,
     left: 220,
-    elevation: 11,
   },
   btn3: {
     justifyContent: "center",
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
     height: 99,
     width: 154,
-    backgroundColor: "#50409A",
+    borderWidth:3,
+    borderColor:"#62A2A2",
     alignItems: "center",
-    //top: 0,
-    bottom:112,
+    bottom:107,
     left: 220,
-    elevation: 11,
+    
   },
 searchbar:{
     marginTop:20,

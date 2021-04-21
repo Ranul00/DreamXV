@@ -40,17 +40,18 @@ export default function PlayerStats({route, navigation}) {
 const styles = StyleSheet.create({
      container: {
           flex: 1,
-          backgroundColor: "#313866",
+          backgroundColor: "#141E24",
           paddingTop:Platform.OS === "android" ? StatusBar.currentHeight:0,
      },
      navigationContainer:{
           //flex:1,
           flexDirection:'row',
-          backgroundColor:'#0D1B46',
+          backgroundColor:'#101B37',
           justifyContent:'space-between',
+          borderBottomColor:"#4FE0B6",
+          borderBottomWidth:1,
           height:50,
-          borderBottomRightRadius:10,
-          borderBottomLeftRadius:10
+          
           
      },
      textOneContainer: {
@@ -60,7 +61,8 @@ const styles = StyleSheet.create({
           
      },
      buttonContainer:{
-          backgroundColor:'#313866',
+          borderWidth:2,
+          borderColor:'#F64668',
           alignItems:'center',
           height:40,
           width:70,
@@ -81,13 +83,15 @@ const styles = StyleSheet.create({
           flex: 1,
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: "#313866",      
+          backgroundColor: "#141E24",   
      },
      imageContainer:{
           width:160,
           height:160,
           borderRadius:10,
-          backgroundColor:'white',
+          backgroundColor:'black',
+          borderColor: "#65BCBF",
+          borderWidth:2,
           position:'absolute',
           alignSelf:'center',
           marginTop:220  
@@ -97,7 +101,9 @@ const styles = StyleSheet.create({
           flex: 2,
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor:'#50409A',
+          backgroundColor: "#0B1114",
+          borderWidth:2,
+          borderColor:"#65BCBF",
           borderTopLeftRadius:40,
           borderTopRightRadius:40,
 

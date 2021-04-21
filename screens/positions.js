@@ -6,6 +6,7 @@ import {
   Button,
   TouchableOpacity,
   ScrollView,
+  StatusBar
 } from "react-native";
 import { globalStyles } from "../styles/global";
 
@@ -62,11 +63,15 @@ export default function ReviewDetails({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={globalStyles.bckButton} onPress={pressHandler}>
-        <Text style={globalStyles.bckBtnText}>Home</Text>
-      </TouchableOpacity>
-      <View style={styles.topicContainer}>
-        <Text style={styles.topicText}>Positions</Text>
+      <View style = {styles.navigationContainer}>
+          <TouchableOpacity style={styles.buttonContainer} onPress={pressHandler}>
+            <Text style = {styles.button}>Home</Text>
+          </TouchableOpacity>
+
+          <View style = {styles.textOneContainer}>
+            <Text style = {styles.textOne}>Positions</Text>
+          </View>
+
       </View>
       <Text style={styles.topic}>Select your position</Text>
 
@@ -110,15 +115,59 @@ export default function ReviewDetails({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#2C2C44",
+    backgroundColor: "#141E24",
+    paddingTop:Platform.OS === "android" ? StatusBar.currentHeight:0,
     flex: 1,
   },
+
+  navigationContainer:{
+    //flex:1,
+    flexDirection:'row',
+    backgroundColor:'#101B37',
+    justifyContent:'space-between',
+    borderBottomColor:"#4FE0B6",
+    borderBottomWidth:1,
+    height:50,
+    
+    
+},
+button: {
+    color:'white',
+    fontWeight:'bold',
+    fontSize:18,
+    //left:6
+},
+buttonContainer:{
+  borderWidth:2,
+  borderColor:'#F64668',
+  alignItems:'center',
+  height:40,
+  width:70,
+  marginLeft:10,
+  marginVertical:5,
+  justifyContent:'center',
+  borderRadius:10
+},
+textOneContainer: {
+    justifyContent:'center',
+    marginRight:10
+    
+    
+},
+textOne: {
+    fontFamily: "FiraSans regular",
+    fontSize: 18,
+    color: '#fff',
+    fontWeight:'bold'
+    
+    //left:10,   
+},
   contentBox: {
     top: 120,
     width: 400,
     height: 30,
     flex: 1,
-    backgroundColor: "#2C2C44",
+    backgroundColor: "#141E24",
     paddingTop: 20,
   },
   contentText: {
