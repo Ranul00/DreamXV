@@ -11,3 +11,10 @@ def bxv_listOutput(worksheet):
     bxv_addToList(worksheet, rows, players)
 
     return players
+
+def positionSort(worksheet, positionNo, strCellHead):
+
+    ws_pp = worksheet[worksheet[strCellHead] == positionNo]
+    ws_pp.sort_values(by="RPI")
+
+    return bxv_listOutput(ws_pp)
