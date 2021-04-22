@@ -65,3 +65,15 @@ def bxv_addToList(worksheet, rows, players):
             "team": worksheet.iloc[row, 11]
         }
         players.append(player)
+
+def searchPlayer(worksheet, name):
+    searchPlayerList = []
+
+    if (name != " "):
+        for x in bxv_listOutput(worksheet):
+            if (name.upper() in x["name"].upper()):
+                searchPlayerList.append(x)
+            elif (name.upper() in x["name"].upper().replace(" ", "")):
+                searchPlayerList.append(x)
+
+    return searchPlayerList
