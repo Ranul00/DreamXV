@@ -26,3 +26,11 @@ def bestTeam():
         bestPlayerList.append(positionSort(ws, x, "Position No")[0])
 
     return bestPlayerList
+
+def pBestTeam():
+    bestPlayerList = []
+
+    for x in range(1, 16):
+        bestPlayerList.append(positionSort(ws, x, "Predicted Position No")[0])
+
+    return bestPlayerList
