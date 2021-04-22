@@ -29,6 +29,11 @@ def getPositionPlayers():
     players = DataProcess.positionSort(position)
     return json.dumps(players)
 
+@app.route('/search', methods =["GET"])
+def getSearchedPlayers():
+    name = request.args.get('name')
+    players = DataProcess.searchPlayer(name)
+    return json.dumps(players)
     
 if __name__ == "__main__":
     app.run(host='192.168.8.106',debug=True)
