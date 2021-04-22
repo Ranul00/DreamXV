@@ -85,3 +85,11 @@ def pd_listOutput(worksheet):
     pd_addToList(worksheet, rows, players)
 
     return players
+
+def getPlayerDetails(name, team):
+    playerDetails = []
+
+    ws_pp1 = ws[ws["Name"] == name]
+    ws_pp2 = ws_pp1[ws_pp1["Team"] == team]
+
+    return pd_listOutput(ws_pp2)
