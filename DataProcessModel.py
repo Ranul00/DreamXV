@@ -77,3 +77,11 @@ def searchPlayer(worksheet, name):
                 searchPlayerList.append(x)
 
     return searchPlayerList
+
+def pd_listOutput(worksheet):
+    players = []
+    rows = worksheet.shape[0]
+
+    pd_addToList(worksheet, rows, players)
+
+    return players
