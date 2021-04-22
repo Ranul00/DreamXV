@@ -6,12 +6,12 @@ export default function Search({navigation}) {
 
      const[searchPlayer, setSearchPlayer] = useState({});
 
-     useEffect(() => {
-          fetch('http://192.168.8.104:5000/search').then(response => response.json().then(data =>{
+     // useEffect(() => {
+     //      fetch('http://192.168.8.104:5000/search').then(response => response.json().then(data =>{
                
-          })
-          );
-     }, [])
+     //      })
+     //      );
+     // }, [])
      const { search } = searchPlayer;
 
      const pressHandler = () => {
