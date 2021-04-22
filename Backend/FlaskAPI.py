@@ -17,6 +17,11 @@ def getBestTeam():
     team = DataProcess.bestTeam()
     return json.dumps(team)
 
+    
+@app.route('/predictedBestTeam', methods =["GET"])
+def getPredictedBestTeam():
+    team = DataProcess.bestTeam()
+    return json.dumps(team)
 
 if __name__ == "__main__":
     app.run(host='192.168.8.106',debug=True)
