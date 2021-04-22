@@ -13,8 +13,10 @@ export default function PlayerStats({route, navigation}) {
      const {month} = route.params;
      const {year} = route.params;
     
+    
 
-     const {url} = route.params;
+     const {img} = route.params;
+     console.log(img);
 
       
 
@@ -60,7 +62,7 @@ export default function PlayerStats({route, navigation}) {
                </View>
 
                <View style = {styles.imageContainer}>
-                    <Image source = {{uri:url}}/>
+                    <Image style = {styles.image} source = {{uri:img}}/>
                
                </View>
           </View>

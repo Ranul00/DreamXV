@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React , { useState, useEffect }from 'react'
 import { StatusBar } from 'react-native';
 import { Platform } from 'react-native';
@@ -40,29 +41,47 @@ export default function BestXV({route,navigation}) {
 
      var i = 0;
      useEffect(() => {
-          fetch('http://192.168.8.104:5000/bestTeam').then(response => response.json().then(data =>{
-               let players = []
+          //fetch('http://192.168.8.104:5000/bestTeam').then(response => response.json().then(data =>{
+          //      let players = []
                
-               for(i; i < 15 ; i ++){
-                    players.push({
-                         id: i,
-                         text: data[i].name, 
-                         url : data[i].img, 
-                         height : data[i].height, 
-                         weight : data[i].weight, 
-                         team : data[i].team, 
-                         position : data[i].position,
-                         day : data[i].day,
-                         month : data[i].month,
-                         year : data[i].year
-                    });
+          //      for(i; i < 15 ; i ++){
+          //           players.push({
+          //                id: i,
+          //                text: data[i].name, 
+          //                url : data[i].img, 
+          //                height : data[i].height, 
+          //                weight : data[i].weight, 
+          //                team : data[i].team, 
+          //                position : data[i].position,
+          //                day : data[i].day,
+          //                month : data[i].month,
+          //                year : data[i].year
+          //           });
           
                    
-               }
+          //      }
 
-               setPlayer(players)
-          })
-          );
+          //      setPlayer(players)
+          // })
+          // );
+          const url = 'http://192.168.8.104:5000/bestTeam';
+          const body = {};
+          // const config = {
+            // params: {
+            //   name: 'xyz',
+            //   team: 'pqr',
+            // }
+          // };
+          http://abc.com/search?name=xyz&team=pqr   // how to catch query params in python    req.params.name
+          
+          axios.get(url).then(response => {
+            /* do thing as you wish*/
+            setPlayer(response.data);
+          }).catch(() => {
+            /*error handlings as you wish*/
+            console.log('API crashed');
+          });
+          // axios.post(url, body).then(data => /* do thing as you wish*/).catch(() => /*error handlings as you wish*/);
      }, [])
 
      return (
@@ -86,12 +105,13 @@ export default function BestXV({route,navigation}) {
                     
                          <FlatList
                               data = {player}
+                              keyExtractor = {item => `${item.name} - ${item.team}`}
                               numColumns = {2}
                               renderItem = {({item}) => {
                                    return(
                                         <View style = {styles.listContainer}>
                                              <TouchableOpacity style = {styles.itemContainer} onPress = {() => navigation.navigate("PlayerStats", item)}>
-                                                  <Text style = {styles.item}>{item.text}</Text>
+                                                  <Text style = {styles.item}>{item.name}</Text>
                                              </TouchableOpacity>
                                         </View>
 
