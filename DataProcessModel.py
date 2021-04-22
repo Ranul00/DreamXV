@@ -18,3 +18,11 @@ def positionSort(worksheet, positionNo, strCellHead):
     ws_pp.sort_values(by="RPI")
 
     return bxv_listOutput(ws_pp)
+
+def bestTeam():
+    bestPlayerList = []
+
+    for x in range(1, 16):
+        bestPlayerList.append(positionSort(ws, x, "Position No")[0])
+
+    return bestPlayerList
