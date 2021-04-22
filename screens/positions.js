@@ -3,28 +3,13 @@ import {
   StyleSheet,
   View,
   Text,
-  Button,
   TouchableOpacity,
   ScrollView,
   StatusBar
 } from "react-native";
-import { globalStyles } from "../styles/global";
+
 
 export default function ReviewDetails({ navigation }) {
-
-  const[position, setPosition] = useState([
-    {name:'Hooker', key:'1'},
-    {name:'Prop', key:'2'},
-    {name:'Lock', key:'3'},
-    {name:'Blind-Side-Flanker', key:'4'},
-    {name:'Open-Side-Flanker', key:'5'},
-    {name:'Number 8', key:'6'},
-    {name:'Scrun Half', key:'7'},
-    {name:'Fly Half', key:'8'},
-    {name:'Center', key:'9'},
-    {name:'Full Back', key:'10'},
-  ]);
-
 
   const pressHandler = () => {
     navigation.goBack();
@@ -73,40 +58,39 @@ export default function ReviewDetails({ navigation }) {
           </View>
 
       </View>
-      <Text style={styles.topic}>Select your position</Text>
+      
 
       <ScrollView style={styles.contentBox}>
-        {/* <Text style={styles.subTopic}>Scrum Players</Text> */}
         <TouchableOpacity style={styles.pButton} onPress={goToHooker}>
-          <Text style={styles.contentText}>1. Hooker</Text>
+          <Text style={styles.contentText}>Hooker</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.pButton} onPress={goToProp}>
-          <Text style={styles.contentText}>2. Prop</Text>
+          <Text style={styles.contentText}>Prop</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.pButton} onPress={goToLock}>
-          <Text style={styles.contentText}>3. Lock</Text>
+          <Text style={styles.contentText}>Lock</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.pButton} onPress={goToBlind}>
-          <Text style={styles.contentText}>4.Blind-side-flanker</Text>
+          <Text style={styles.contentText}>Blind-side-flanker</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.pButton} onPress={goToOpen}>
-          <Text style={styles.contentText}>5.Open-side-flanker</Text>
+          <Text style={styles.contentText}>Open-side-flanker</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.pButton} onPress={goTonumber8}>
-          <Text style={styles.contentText}>6.Number 8</Text>
+          <Text style={styles.contentText}>Number 8</Text>
         </TouchableOpacity>
         {/* <Text style={styles.subTopic}>Back Players</Text> */}
         <TouchableOpacity style={styles.pButton} onPress={goToScruhHalf}>
-          <Text style={styles.contentText}>7.Scrum half</Text>
+          <Text style={styles.contentText}>Scrum half</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.pButton} onPress={goToFly}>
-          <Text style={styles.contentText}>8.Fly half</Text>
+          <Text style={styles.contentText}>Fly half</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.pButton} onPress={goToCenter}>
-          <Text style={styles.contentText}>8.Center</Text>
+          <Text style={styles.contentText}>Center</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.pButton} onPress={goToFullBack}>
-          <Text style={styles.contentText}>9.Full back</Text>
+          <Text style={styles.contentText}>Full back</Text>
         </TouchableOpacity>
       </ScrollView>
     </View>
@@ -127,8 +111,7 @@ const styles = StyleSheet.create({
     justifyContent:'space-between',
     borderBottomColor:"#4FE0B6",
     borderBottomWidth:1,
-    height:50,
-    
+    height:50,  
     
 },
 button: {
@@ -163,12 +146,8 @@ textOne: {
     //left:10,   
 },
   contentBox: {
-    top: 120,
-    width: 400,
-    height: 30,
     flex: 1,
     backgroundColor: "#141E24",
-    paddingTop: 20,
   },
   contentText: {
     fontSize: 17,
@@ -184,36 +163,16 @@ textOne: {
     fontWeight: "bold",
   },
   pButton: {
-    width: 150,
-    //backgroundColor: "white",
+    alignItems:'center',
+    justifyContent:'center',
+    backgroundColor: "#0B1114",
+    width: 350,
+    height:70,
+    borderBottomColor: "#4FE0B6",
+    borderWidth:1,
     left: 20,
-
-    paddingTop: 20,
+    marginTop:10,
   },
 
-  topic: {
-    fontFamily: "FiraSans regular",
-    fontSize: 23,
-    top: 110,
-    left: 8,
-    color: "white",
-    fontWeight: "bold",
-  },
 
-  topicContainer: {
-    backgroundColor: "#1A1E49",
-    width: 100,
-    height: 38,
-    top: 90,
-    left: 8,
-    borderRadius: 10,
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    elevation: 15,
-  },
-  topicText: {
-    alignSelf: "center",
-    color: "white",
-    fontWeight: "bold",
-  },
 });

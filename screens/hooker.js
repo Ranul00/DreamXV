@@ -3,13 +3,10 @@ import {
   StyleSheet,
   View,
   Text,
-  Button,
   TouchableOpacity,
-  ScrollView,
   FlatList,
   StatusBar,
 } from "react-native";
-import { globalStyles } from "../styles/global";
 
 export default function ReviewDetails({ navigation }) {
   const pressHandler = () => {
