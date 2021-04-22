@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -6,6 +6,8 @@ import {
   Button,
   TouchableOpacity,
   ScrollView,
+  FlatList,
+  StatusBar,
 } from "react-native";
 import { globalStyles } from "../styles/global";
 
@@ -13,25 +15,127 @@ export default function ReviewDetails({ navigation }) {
   const pressHandler = () => {
     navigation.goBack();
   };
+  const [pos, setPos] = useState([]);
+
+  var i = 0;
+  useEffect(() => {
+    fetch("http://192.168.8.106:5000/bestTeam").then((response) =>
+      response.json().then((data) => {
+        let players = [];
+
+        for (i; i < 15; i++) {
+          players.push({
+            id: i,
+            position: data[i].position,
+            text: data[i].name,
+            team: data[i].team,
+          });
+          //setPlayer(data[i].name);
+        }
+
+        let positions = [];
+
+        // for (i; i < players.length; i++) {
+        //   if (players[i].position === "Fullback") {
+        //     positions.push(players[i].name);
+        //   }
+        // }
+
+        positions = players.filter((player) => player.position === "Hooker");
+
+        console.log(positions[0].text);
+        setPos(positions);
+
+        // var x = playerNames.toString();
+        // console.log(x);
+      })
+    );
+  }, []);
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={globalStyles.bckButton} onPress={pressHandler}>
-        <Text style={globalStyles.bckBtnText}>Back</Text>
-      </TouchableOpacity>
-      <Text style={styles.topic}>Hookers</Text>
+      <View style={styles.navigationContainer}>
+        <TouchableOpacity style={styles.buttonContainer} onPress={pressHandler}>
+          <Text style={styles.button}>Back</Text>
+        </TouchableOpacity>
 
-      <ScrollView style={styles.contentBox}>
-        {/* <Text style={styles.subTopic}>Scrum Players</Text> */}
-      </ScrollView>
+        <View style={styles.textOneContainer}>
+          <Text style={styles.textOne}>Hookers</Text>
+        </View>
+      </View>
+
+      <View style={styles.main}>
+        <View style={styles.textContainer}>
+          <Text style={styles.text}>Hookers</Text>
+        </View>
+
+        <FlatList
+          data={pos}
+          numColumns={1}
+          renderItem={({ item }) => {
+            return (
+              <View style={styles.listContainer}>
+                <TouchableOpacity
+                  style={styles.itemContainer}
+                  onPress={() => navigation.navigate("PlayerStats", item)}
+                >
+                  <Text style={styles.item}>{item.text}</Text>
+                </TouchableOpacity>
+              </View>
+            );
+          }}
+        />
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#2C2C44",
+    backgroundColor: "#141E24",
     flex: 1,
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+  },
+  navigationContainer: {
+    //flex:1,
+    flexDirection: "row",
+    backgroundColor: "#101B37",
+    justifyContent: "space-between",
+    borderBottomColor: "#4FE0B6",
+    borderBottomWidth: 1,
+    height: 50,
+  },
+  button: {
+    color: "white",
+    fontWeight: "bold",
+    fontSize: 18,
+    //left:6
+  },
+  main: {
+    flex: 1,
+  },
+  buttonContainer: {
+    borderWidth: 2,
+    borderColor: "#F64668",
+    alignItems: "center",
+    height: 40,
+    width: 70,
+    marginLeft: 10,
+    marginVertical: 5,
+    justifyContent: "center",
+    borderRadius: 10,
+  },
+  textOneContainer: {
+    justifyContent: "center",
+    marginRight: 10,
+  },
+  textOne: {
+    fontFamily: "FiraSans regular",
+    fontSize: 18,
+    color: "#fff",
+    fontWeight: "bold",
+
+    //left:10,
   },
   contentBox: {
     top: 120,
@@ -49,6 +153,17 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "bold",
   },
+  textContainer: {
+    paddingTop: 0,
+    alignItems: "center",
+  },
+  text: {
+    fontFamily: "FiraSans regular",
+    fontSize: 23,
+    top: 20,
+    left: 6,
+    color: "white",
+  },
 
   topicContainer: {
     backgroundColor: "#1A1E49",
@@ -60,5 +175,27 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 12,
     elevation: 15,
+  },
+  listContainer: {
+    flex: 1,
+    alignItems: "center",
+    marginTop: 30,
+    //paddingTop: 0,
+    backgroundColor: "#141E24",
+  },
+  itemContainer: {
+    borderWidth: 1,
+    borderColor: "#65BCBF",
+    alignItems: "center",
+    justifyContent: "center",
+    width: 360,
+    height: 60,
+  },
+  item: {
+    fontFamily: "FiraSans regular",
+    fontSize: 15,
+    color: "white",
+    padding: 11,
+    marginHorizontal: 10,
   },
 });

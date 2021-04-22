@@ -68,9 +68,7 @@ export default function PlayerStats({ route, navigation }) {
       </View>
 
       <View style={styles.imageContainer}>
-        {/* <Image 
-                    style = {styles.image}
-                    source= {require(x)}/> */}
+        {/* <Image style={styles.image} source={{ uri: { url } }} /> */}
       </View>
     </View>
   );
@@ -152,8 +150,8 @@ const styles = StyleSheet.create({
     marginTop: 220,
   },
   image: {
-    width: 150,
-    height: 150,
+    width: 300,
+    height: 6000,
   },
   playerDetails: {
     flex: 2,
