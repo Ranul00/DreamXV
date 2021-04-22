@@ -44,14 +44,23 @@ export default function BestXV({route,navigation}) {
                let players = []
                
                for(i; i < 15 ; i ++){
-                    players.push({text: data[i].name, id: i, url : data[i].img, height : data[i].height, weight : data[i].weight, team : data[i].team, position : data[i].position});
+                    players.push({
+                         id: i,
+                         text: data[i].name, 
+                         url : data[i].img, 
+                         height : data[i].height, 
+                         weight : data[i].weight, 
+                         team : data[i].team, 
+                         position : data[i].position,
+                         day : data[i].day,
+                         month : data[i].month,
+                         year : data[i].year
+                    });
           
-                   //setPlayer(data[i].name);    
+                   
                }
 
                setPlayer(players)
-               // var x = playerNames.toString();
-               // console.log(x);
           })
           );
      }, [])

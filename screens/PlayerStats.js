@@ -4,8 +4,15 @@ import { StyleSheet, Text, View ,TouchableOpacity,StatusBar,Image} from 'react-n
 export default function PlayerStats({route, navigation}) {
 
      const {text} = route.params;
+
+     const {height} = route.params;
+     const {weight} = route.params;
+     const {team} = route.params;
+     const {position} = route.params;
+     const {day} = route.params;
+     const {month} = route.params;
+     const {year} = route.params;
     
-     var x = '\"' + url + '\"' ;
 
      const {url} = route.params;
 
@@ -33,15 +40,28 @@ export default function PlayerStats({route, navigation}) {
                </View>
 
                <View style = {styles.playerDetails}>
-                    <Text style = {styles.text}>player stats displays here</Text>
+
+                    <View style = {styles.stats}>
+                         <Text style = {styles.statText1}>Height</Text><Text style = {styles.statText2}>{height} m</Text>
+                    </View>
+                    <View style = {styles.stats}>
+                         <Text style = {styles.statText1}>Weight</Text><Text style = {styles.statText2}>{weight} kg</Text>
+                    </View>
+                    <View style = {styles.stats}>
+                         <Text style = {styles.statText1}>Team</Text><Text style = {styles.statText2}>{team}</Text>
+                    </View>
+                    <View style = {styles.stats}>
+                         <Text style = {styles.statText1}>Position</Text><Text style = {styles.statText2}>{position}</Text>
+                    </View>
+                    <View style = {styles.stats}>
+                         <Text style = {styles.statText1}>Date Of Birth</Text><Text style = {styles.statText2}>{day} - {month} - {year}</Text>
+                    </View>
+                    
                </View>
 
                <View style = {styles.imageContainer}>
-                    
-                    {/* <Image 
-                    style = {styles.image}
-                    source= {require(x)}/> */}
-                    
+                    <Image source = {{uri:url}}/>
+               
                </View>
           </View>
      )
@@ -69,6 +89,27 @@ const styles = StyleSheet.create({
           marginRight:10
           
           
+     },
+     stats:{
+          width:350 ,
+          height:50,
+          flexDirection:'row',
+          paddingTop:10,
+          paddingLeft:10,
+          paddingRight:10,
+          marginTop:18,
+          justifyContent:'space-between',
+          backgroundColor:'#141E24',
+          borderBottomColor:'#65BCBF',
+          borderWidth:1,
+     },
+     statText1:{
+          color:'#fff',
+          fontSize:20
+     },
+     statText2:{
+          color:'#fff',
+          fontSize:20
      },
      buttonContainer:{
           borderWidth:2,
@@ -107,8 +148,8 @@ const styles = StyleSheet.create({
         
      },
      image:{
-          width:150,
-          height:150, 
+          width:140,
+          height:140, 
      },
      playerDetails: {
           flex: 2,
