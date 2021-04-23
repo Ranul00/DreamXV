@@ -67,7 +67,7 @@ export default function ReviewDetails({ navigation }) {
           <Text style={styles.contentText}>Tight-Head-Prop</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.pButton} onPress={goToLock}>
-          <Text style={styles.contentText}>Lock</Text>
+          <Text style={styles.contentText}>Lock 4</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.pButton} onPress={goToBlind}>
           <Text style={styles.contentText}>Blind-side-flanker</Text>
