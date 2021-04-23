@@ -5,11 +5,11 @@ import json
 
 ws = pd.read_excel("Players.xlsx", "Player Details", index_col=None, na_values=["NA"])
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 
-db = SQLAlchemy(app)
+db = SQLAlchemy(application)
 
 def listOutput(worksheet):
     players = []
@@ -100,27 +100,27 @@ def searchPlayer(name):
 
 
 
-@app.route('/bestTeam', methods =["GET"])
+@application.route('/bestTeam', methods =["GET"])
 def getBestTeam():
     team = bestTeam()
     return json.dumps(team, indent=2)
 
-@app.route('/predictedBestTeam', methods =["GET"])
+@application.route('/predictedBestTeam', methods =["GET"])
 def getPredictedBestTeam():
     team = predictedBestTeam()
     return json.dumps(team, indent=2)
 
-@app.route('/positionPlayers', methods =["GET"])
+@application.route('/positionPlayers', methods =["GET"])
 def getPositionPlayers():
     position = request.args.get('position')
     players = positionSort(position)
     return json.dumps(players, indent=2)
 
-@app.route('/search', methods =["GET"])
+@application.route('/search', methods =["GET"])
 def getSearchedPlayers():
     name = request.args.get('name')
     players = searchPlayer(name)
     return json.dumps(players, indent=2)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    application.run('0.0.0.0')
