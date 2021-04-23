@@ -58,7 +58,11 @@ def positionSort(position):
 
 
 def predictedPositionSort(position):
-    pass
+
+    ws_pp = ws[ws["Prediction Position"] == position]
+    ws_pp.sort_values(by="RPI")
+
+    return listOutput(ws_pp)
 
 def bestTeam():
     pass
