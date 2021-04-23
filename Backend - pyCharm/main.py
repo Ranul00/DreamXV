@@ -1,6 +1,5 @@
 from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
-import DataProcess
 import pandas as pd
 import json
 
@@ -13,7 +12,12 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 db = SQLAlchemy(app)
 
 def listOutput(worksheet):
-    pass
+    players = []
+    rows = worksheet.shape[0]
+
+    addToList(worksheet, rows, players)
+
+    return players
 
 def addToList(worksheet, rows, players):
     pass
