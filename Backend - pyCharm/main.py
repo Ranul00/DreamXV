@@ -64,11 +64,27 @@ def predictedPositionSort(position):
 
     return listOutput(ws_pp)
 
+positionList = ["Loose Head Prop", "Hooker", "Tight Head Prop", "Lock 4",
+                        "Lock 5", "Blindside Flanker", "Openside Flanker", "Number 8",
+                        "Scrum Half", "Fly Half", "Left Wing", "Inside Centre",
+                        "Outside Centre", "Right Wing", "Fullback"]
+
+
 def bestTeam():
-    pass
+    bestPlayerList = []
+
+    for x in range(0, 15):
+        bestPlayerList.append(positionSort(positionList[x])[0])
+
+    return bestPlayerList
 
 def predictedBestTeam():
-    pass
+    bestPlayerList = []
+
+    for x in range(0, 15):
+        bestPlayerList.append(predictedPositionSort(positionList[x])[0])
+
+    return bestPlayerList
 
 def searchPlayer(name):
     pass
