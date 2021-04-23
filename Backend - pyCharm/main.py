@@ -35,16 +35,16 @@ def addToList(worksheet, rows, players):
             "year": int(worksheet.iloc[row, 10]),
             "team": worksheet.iloc[row, 11],
             "matchesPlayed": int(worksheet.iloc[row, 12]),
-            "minutesPlayed": int(worksheet.iloc[row, 16]) + int(worksheet.iloc[row, 18]),
-            "cameOn": int(worksheet.iloc[row, 17]),
-            "cameOff": int(worksheet.iloc[row, 20]),
-            "tries": int(worksheet.iloc[row, 21]),
-            "dropGoals": int(worksheet.iloc[row, 22]),
-            "conversion": int(worksheet.iloc[row, 24]),
-            "penalties": int(worksheet.iloc[row, 26]),
-            "points": int(worksheet.iloc[row, 27]),
-            "redCards": int(worksheet.iloc[row, 30]),
-            "predicted pos": worksheet.iloc[row, 31]
+            "minutesPlayed": int(worksheet.iloc[row, 15]) + int(worksheet.iloc[row, 17]),
+            "cameOn": int(worksheet.iloc[row, 18]),
+            "cameOff": int(worksheet.iloc[row, 21]),
+            "tries": int(worksheet.iloc[row, 22]),
+            "dropGoals": int(worksheet.iloc[row, 23]),
+            "conversion": int(worksheet.iloc[row, 25]),
+            "penalties": int(worksheet.iloc[row, 27]),
+            "points": int(worksheet.iloc[row, 28]),
+            "redCards": int(worksheet.iloc[row, 31]),
+            "predictedPos": worksheet.iloc[row, 32]
         }
         players.append(player)
 
@@ -59,7 +59,7 @@ def positionSort(position):
 
 def predictedPositionSort(position):
 
-    ws_pp = ws[ws["Prediction Position"] == position]
+    ws_pp = ws[ws["Predicted Position"] == position]
     ws_pp.sort_values(by="RPI")
 
     return listOutput(ws_pp)
@@ -107,7 +107,7 @@ def getBestTeam():
 
 @app.route('/predictedBestTeam', methods =["GET"])
 def getPredictedBestTeam():
-    team = bestTeam()
+    team = predictedBestTeam()
     return json.dumps(team, indent=2)
 
 @app.route('/positionPlayers', methods =["GET"])
