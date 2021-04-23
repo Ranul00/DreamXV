@@ -5,12 +5,10 @@ import {
   Text,
   TouchableOpacity,
   ScrollView,
-  StatusBar
+  StatusBar,
 } from "react-native";
 
-
 export default function ReviewDetails({ navigation }) {
-
   const pressHandler = () => {
     navigation.goBack();
   };
@@ -45,20 +43,21 @@ export default function ReviewDetails({ navigation }) {
   const goToFullBack = () => {
     navigation.navigate("FullBack");
   };
+  const goToLooseHeadProp = () => {
+    navigation.navigate("LooseHeadProp");
+  };
 
   return (
     <View style={styles.container}>
-      <View style = {styles.navigationContainer}>
-          <TouchableOpacity style={styles.buttonContainer} onPress={pressHandler}>
-            <Text style = {styles.button}>Home</Text>
-          </TouchableOpacity>
+      <View style={styles.navigationContainer}>
+        <TouchableOpacity style={styles.buttonContainer} onPress={pressHandler}>
+          <Text style={styles.button}>Home</Text>
+        </TouchableOpacity>
 
-          <View style = {styles.textOneContainer}>
-            <Text style = {styles.textOne}>Positions</Text>
-          </View>
-
+        <View style={styles.textOneContainer}>
+          <Text style={styles.textOne}>Positions</Text>
+        </View>
       </View>
-      
 
       <ScrollView style={styles.contentBox}>
         <TouchableOpacity style={styles.pButton} onPress={goToHooker}>
@@ -92,6 +91,9 @@ export default function ReviewDetails({ navigation }) {
         <TouchableOpacity style={styles.pButton} onPress={goToFullBack}>
           <Text style={styles.contentText}>Full back</Text>
         </TouchableOpacity>
+        <TouchableOpacity style={styles.pButton} onPress={goToLooseHeadProp}>
+          <Text style={styles.contentText}>Loose Head Prop</Text>
+        </TouchableOpacity>
       </ScrollView>
     </View>
   );
@@ -100,51 +102,48 @@ export default function ReviewDetails({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#141E24",
-    paddingTop:Platform.OS === "android" ? StatusBar.currentHeight:0,
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     flex: 1,
   },
 
-  navigationContainer:{
+  navigationContainer: {
     //flex:1,
-    flexDirection:'row',
-    backgroundColor:'#101B37',
-    justifyContent:'space-between',
-    borderBottomColor:"#4FE0B6",
-    borderBottomWidth:1,
-    height:50,  
-    
-},
-button: {
-    color:'white',
-    fontWeight:'bold',
-    fontSize:18,
+    flexDirection: "row",
+    backgroundColor: "#101B37",
+    justifyContent: "space-between",
+    borderBottomColor: "#4FE0B6",
+    borderBottomWidth: 1,
+    height: 50,
+  },
+  button: {
+    color: "white",
+    fontWeight: "bold",
+    fontSize: 18,
     //left:6
-},
-buttonContainer:{
-  borderWidth:2,
-  borderColor:'#F64668',
-  alignItems:'center',
-  height:40,
-  width:70,
-  marginLeft:10,
-  marginVertical:5,
-  justifyContent:'center',
-  borderRadius:10
-},
-textOneContainer: {
-    justifyContent:'center',
-    marginRight:10
-    
-    
-},
-textOne: {
+  },
+  buttonContainer: {
+    borderWidth: 2,
+    borderColor: "#F64668",
+    alignItems: "center",
+    height: 40,
+    width: 70,
+    marginLeft: 10,
+    marginVertical: 5,
+    justifyContent: "center",
+    borderRadius: 10,
+  },
+  textOneContainer: {
+    justifyContent: "center",
+    marginRight: 10,
+  },
+  textOne: {
     fontFamily: "FiraSans regular",
     fontSize: 18,
-    color: '#fff',
-    fontWeight:'bold'
-    
-    //left:10,   
-},
+    color: "#fff",
+    fontWeight: "bold",
+
+    //left:10,
+  },
   contentBox: {
     flex: 1,
     backgroundColor: "#141E24",
@@ -163,16 +162,14 @@ textOne: {
     fontWeight: "bold",
   },
   pButton: {
-    alignItems:'center',
-    justifyContent:'center',
+    alignItems: "center",
+    justifyContent: "center",
     backgroundColor: "#0B1114",
     width: 350,
-    height:70,
+    height: 70,
     borderBottomColor: "#4FE0B6",
-    borderWidth:1,
+    borderWidth: 1,
     left: 20,
-    marginTop:10,
+    marginTop: 10,
   },
-
-
 });
