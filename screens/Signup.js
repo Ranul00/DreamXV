@@ -21,37 +21,31 @@ export default function Signup({ navigation }) {
 
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-      <ImageBackground  source={require("../assets/pics/bgpic.jpg")}
+      <ImageBackground
+        source={require("../assets/pics/bgpic.jpg")}
         style={styles.image}
-        blurRadius = {1}
-        >
-      <View style={styles.form}>
-            <Text style={styles.header}>Get Started</Text>
+        blurRadius={1}
+      >
+        <View style={styles.form}>
+          <Text style={styles.header}>Get Started</Text>
 
-            <TextInput
-              style={styles.textinput}
-              placeholder="Your name"
-              placeholderTextColor="#fff"
-              onChangeText={(value) => {
-                setName({ text: value });
-              }}
-            />
-            <TextInput
-              style={styles.textinput}
-              placeholder="Email"
-              placeholderTextColor="#fff"
-            />
-            <TouchableOpacity
-              style={styles.btn1}
-              onPress={() => {
-                navigation.navigate("Home", name);
-              }}
-            >
-              <Text style={styles.btnText}>Confirm</Text>
-            </TouchableOpacity>
-        
-        
-      </View>
+          <TextInput
+            style={styles.textinput}
+            placeholder="Your name"
+            placeholderTextColor="#fff"
+            onChangeText={(value) => {
+              setName({ text: value });
+            }}
+          />
+          <TouchableOpacity
+            style={styles.btn1}
+            onPress={() => {
+              navigation.navigate("Home", name);
+            }}
+          >
+            <Text style={styles.btnText}>Confirm</Text>
+          </TouchableOpacity>
+        </View>
       </ImageBackground>
     </TouchableWithoutFeedback>
   );
@@ -59,7 +53,6 @@ export default function Signup({ navigation }) {
 
 const styles = StyleSheet.create({
   form: {
-    
     flex: 1,
     alignItems: "center",
   },
@@ -107,6 +100,5 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: "cover",
     justifyContent: "center",
-    
   },
 });
