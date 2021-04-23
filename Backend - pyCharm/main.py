@@ -50,7 +50,12 @@ def addToList(worksheet, rows, players):
 
 
 def positionSort(position):
-    pass
+
+    ws_pp = ws[ws["Position"] == position]
+    ws_pp.sort_values(by="RPI")
+
+    return listOutput(ws_pp)
+
 
 def predictedPositionSort(position):
     pass
