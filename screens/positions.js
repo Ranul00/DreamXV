@@ -13,50 +13,68 @@ export default function ReviewDetails({ navigation }) {
     navigation.goBack();
   };
 
+  var positions = {
+    hooker: "Hooker",
+    tightHeadProp: "Tight Head Prop",
+    looseHeadProp: "Loose Head Prop",
+    lock4: "Lock 4",
+    lock5: "Lock 5",
+    blindesideFlanker: "Blindeside Flanker",
+    opensideFlanker: "Openside Flanker",
+    number8: "Number 8",
+    scrumHalf: "Scrum Half",
+    flyHalf: "Fly Half",
+    leftWing: "Left Wing",
+    insideCenter: "Inside Center",
+    outsideCenter: "Outside Center",
+    rightWing: "Right Wing",
+    fullback: "Fullback",
+  };
+
   const goToHooker = () => {
-    navigation.navigate("Hooker");
+    navigation.navigate("Hooker", positions);
   };
   const goToProp = () => {
-    navigation.navigate("Prop");
+    navigation.navigate("Prop", positions);
   };
   const goToLock = () => {
-    navigation.navigate("Lock");
+    navigation.navigate("Lock", positions);
   };
   const goToBlind = () => {
-    navigation.navigate("Blind");
+    navigation.navigate("Blind", positions);
   };
   const goToOpen = () => {
-    navigation.navigate("Open");
+    navigation.navigate("Open", positions);
   };
   const goTonumber8 = () => {
-    navigation.navigate("Number8");
+    navigation.navigate("Number8", positions);
   };
   const goToScruhHalf = () => {
-    navigation.navigate("Scrum");
+    navigation.navigate("Scrum", positions);
   };
   const goToFly = () => {
-    navigation.navigate("FlyHalf");
+    navigation.navigate("FlyHalf", positions);
   };
   const goToCenter = () => {
-    navigation.navigate("Center");
+    navigation.navigate("Center", positions);
   };
   const goToFullBack = () => {
-    navigation.navigate("FullBack");
+    navigation.navigate("FullBack", positions);
   };
   const goToLooseHeadProp = () => {
-    navigation.navigate("LooseHeadProp");
+    navigation.navigate("LooseHeadProp", positions);
   };
   const goToLock5 = () => {
-    navigation.navigate("Lock5");
+    navigation.navigate("Lock5", positions);
   };
   const goToLeftWing = () => {
-    navigation.navigate("LeftWing");
+    navigation.navigate("LeftWing", positions);
   };
   const goToRightWing = () => {
-    navigation.navigate("RightWing");
+    navigation.navigate("RightWing", positions);
   };
   const goToOutsideCenter = () => {
-    navigation.navigate("OutsideCenter");
+    navigation.navigate("OutsideCenter", positions);
   };
 
   return (

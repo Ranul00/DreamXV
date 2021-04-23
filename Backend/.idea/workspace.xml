@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e222d451-5c80-422c-a84c-57df5bf3737c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../screens/LeftWing.js" beforeDir="false" afterPath="$PROJECT_DIR$/../screens/LeftWing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../screens/Lock5.js" beforeDir="false" afterPath="$PROJECT_DIR$/../screens/Lock5.js" afterDir="false" />
-    </list>
+    <list default="true" id="e222d451-5c80-422c-a84c-57df5bf3737c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +77,7 @@
       <workItem from="1619039539852" duration="1346000" />
       <workItem from="1619055520405" duration="11296000" />
       <workItem from="1619128337253" duration="583000" />
-      <workItem from="1619141319182" duration="1516000" />
+      <workItem from="1619141319182" duration="2756000" />
     </task>
     <servers />
   </component>

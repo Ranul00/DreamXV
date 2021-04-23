@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import {
   StyleSheet,
   View,
@@ -8,45 +9,33 @@ import {
   StatusBar,
 } from "react-native";
 
-export default function ReviewDetails({ navigation }) {
+export default function ReviewDetails({ route, navigation }) {
   const pressHandler = () => {
     navigation.goBack();
   };
+
+  const { hooker } = route.params;
+
   const [pos, setPos] = useState([]);
 
   var i = 0;
   useEffect(() => {
-    fetch("http://192.168.8.106:5000/bestTeam").then((response) =>
-      response.json().then((data) => {
-        let players = [];
-
-        for (i; i < 15; i++) {
-          players.push({
-            id: i,
-            position: data[i].position,
-            text: data[i].name,
-            team: data[i].team,
-          });
-          //setPlayer(data[i].name);
-        }
-
-        let positions = [];
-
-        // for (i; i < players.length; i++) {
-        //   if (players[i].position === "Fullback") {
-        //     positions.push(players[i].name);
-        //   }
-        // }
-
-        positions = players.filter((player) => player.position === "Hooker");
-
-        console.log(positions[0].text);
-        setPos(positions);
-
-        // var x = playerNames.toString();
-        // console.log(x);
+    const url = "http://192.168.8.106:5000/positionPlayers";
+    const config = {
+      params: {
+        position: hooker,
+      },
+    };
+    axios
+      .get(url, config)
+      .then((response) => {
+        /* do thing as you wish*/
+        setPos(response.data);
       })
-    );
+      .catch(() => {
+        /error handlings as you wish/;
+        console.log("API crashed");
+      });
   }, []);
 
   return (
@@ -76,7 +65,7 @@ export default function ReviewDetails({ navigation }) {
                   style={styles.itemContainer}
                   onPress={() => navigation.navigate("PlayerStats", item)}
                 >
-                  <Text style={styles.item}>{item.text}</Text>
+                  <Text style={styles.item}>{item.name}</Text>
                 </TouchableOpacity>
               </View>
             );
