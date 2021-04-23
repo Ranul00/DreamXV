@@ -25,7 +25,7 @@ export default function ReviewDetails({ navigation }) {
     scrumHalf: "Scrum Half",
     flyHalf: "Fly Half",
     leftWing: "Left Wing",
-    insideCenter: "Inside Center",
+    insideCenter: "Inside Centre",
     outsideCenter: "Outside Center",
     rightWing: "Right Wing",
     fullback: "Fullback",
