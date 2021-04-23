@@ -87,7 +87,16 @@ def predictedBestTeam():
     return bestPlayerList
 
 def searchPlayer(name):
-    pass
+    searchPlayerList = []
+
+    if (name != " "):
+        for x in listOutput(ws):
+            if (name.upper() in x["name"].upper()):
+                searchPlayerList.append(x)
+            elif (name.upper() in x["name"].upper().replace(" ", "")):
+                searchPlayerList.append(x)
+
+    return searchPlayerList
 
 
 
