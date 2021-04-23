@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import {
   StyleSheet,
   View,
@@ -7,13 +8,38 @@ import {
   TouchableOpacity,
   ScrollView,
   StatusBar,
+  FlatList,
 } from "react-native";
 import { globalStyles } from "../styles/global";
 
-export default function ReviewDetails({ navigation }) {
+export default function ReviewDetails({ route, navigation }) {
   const pressHandler = () => {
     navigation.goBack();
   };
+
+  const { blindesideFlanker } = route.params;
+
+  const [pos, setPos] = useState([]);
+
+  var i = 0;
+  useEffect(() => {
+    const url = "http://192.168.8.106:5000/positionPlayers";
+    const config = {
+      params: {
+        position: blindesideFlanker,
+      },
+    };
+    axios
+      .get(url, config)
+      .then((response) => {
+        /* do thing as you wish*/
+        setPos(response.data);
+      })
+      .catch(() => {
+        /error handlings as you wish/;
+        console.log("API crashed");
+      });
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -32,7 +58,7 @@ export default function ReviewDetails({ navigation }) {
           <Text style={styles.text}>Blind Side Flanker</Text>
         </View>
 
-        {/* <FlatList
+        <FlatList
           data={pos}
           numColumns={1}
           renderItem={({ item }) => {
@@ -42,12 +68,12 @@ export default function ReviewDetails({ navigation }) {
                   style={styles.itemContainer}
                   onPress={() => navigation.navigate("PlayerStats", item)}
                 >
-                  <Text style={styles.item}>{item.text}</Text>
+                  <Text style={styles.item}>{item.name}</Text>
                 </TouchableOpacity>
               </View>
             );
           }}
-        /> */}
+        />
       </View>
     </View>
   );

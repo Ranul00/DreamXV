@@ -19,7 +19,7 @@ export default function ReviewDetails({ navigation }) {
     looseHeadProp: "Loose Head Prop",
     lock4: "Lock 4",
     lock5: "Lock 5",
-    blindesideFlanker: "Blindeside Flanker",
+    blindesideFlanker: "Blindside Flanker",
     opensideFlanker: "Openside Flanker",
     number8: "Number 8",
     scrumHalf: "Scrum Half",
