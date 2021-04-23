@@ -58,6 +58,7 @@ export default function ReviewDetails({ route, navigation }) {
         <FlatList
           data={pos}
           numColumns={1}
+          keyExtractor={(item) => `${item.name} - ${item.team}`}
           renderItem={({ item }) => {
             return (
               <View style={styles.listContainer}>

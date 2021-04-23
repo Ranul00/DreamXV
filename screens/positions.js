@@ -26,7 +26,7 @@ export default function ReviewDetails({ navigation }) {
     flyHalf: "Fly Half",
     leftWing: "Left Wing",
     insideCenter: "Inside Centre",
-    outsideCenter: "Outside Center",
+    outsideCenter: "Outside Centre",
     rightWing: "Right Wing",
     fullback: "Fullback",
   };
