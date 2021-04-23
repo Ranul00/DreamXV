@@ -20,6 +20,10 @@ import Center from "../screens/center";
 import FullBack from "../screens/fullBack";
 import LooseHeadProp from "../screens/LooseHeadProp";
 import Search from "../screens/Search";
+import Lock5 from "../screens/Lock5";
+import LeftWing from "../screens/LeftWing";
+import RightWing from "../screens/RightWing";
+import OutsideCenter from "../screens/OutsideCenter";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -45,6 +49,10 @@ const HomeNavigator = () => (
     <Screen name="FullBack" component={FullBack} />
     <Screen name="Search" component={Search} />
     <Screen name="LooseHeadProp" component={LooseHeadProp} />
+    <Screen name="Lock5" component={Lock5} />
+    <Screen name="LeftWing" component={LeftWing} />
+    <Screen name="RightWing" component={RightWing} />
+    <Screen name="OutsideCenter" component={OutsideCenter} />
   </Navigator>
 );
 

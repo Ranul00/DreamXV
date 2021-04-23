@@ -46,6 +46,18 @@ export default function ReviewDetails({ navigation }) {
   const goToLooseHeadProp = () => {
     navigation.navigate("LooseHeadProp");
   };
+  const goToLock5 = () => {
+    navigation.navigate("Lock5");
+  };
+  const goToLeftWing = () => {
+    navigation.navigate("LeftWing");
+  };
+  const goToRightWing = () => {
+    navigation.navigate("RightWing");
+  };
+  const goToOutsideCenter = () => {
+    navigation.navigate("OutsideCenter");
+  };
 
   return (
     <View style={styles.container}>
@@ -86,13 +98,25 @@ export default function ReviewDetails({ navigation }) {
           <Text style={styles.contentText}>Fly half</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.pButton} onPress={goToCenter}>
-          <Text style={styles.contentText}>Center</Text>
+          <Text style={styles.contentText}>Inside-Center</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.pButton} onPress={goToFullBack}>
           <Text style={styles.contentText}>Full back</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.pButton} onPress={goToLooseHeadProp}>
           <Text style={styles.contentText}>Loose Head Prop</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.pButton} onPress={goToLock5}>
+          <Text style={styles.contentText}>Lock 5</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.pButton} onPress={goToLeftWing}>
+          <Text style={styles.contentText}>Left Wing</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.pButton} onPress={goToRightWing}>
+          <Text style={styles.contentText}>Right Wing</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.pButton} onPress={goToOutsideCenter}>
+          <Text style={styles.contentText}>Outside Center</Text>
         </TouchableOpacity>
       </ScrollView>
     </View>
